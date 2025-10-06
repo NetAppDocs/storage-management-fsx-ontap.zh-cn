@@ -18,23 +18,23 @@ link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html["A
 
 
 
-== NetApp控制台
+== NetApp Console
 
-可通过NetApp控制台访问Amazon FSx for NetApp ONTAP管理。
+可通过NetApp Console访问Amazon FSx for NetApp ONTAP管理。
 
-NetApp控制台提供企业级跨本地和云环境的NetApp存储和数据服务的集中管理。需要控制台才能访问和使用NetApp数据服务。作为管理界面，它使您能够从一个界面管理许多存储资源。控制台管理员可以控制企业内所有系统的存储和服务的访问。
+NetApp Console提供企业级跨本地和云环境的NetApp存储和数据服务的集中管理。需要控制台才能访问和使用NetApp数据服务。作为管理界面，它使您能够从一个界面管理许多存储资源。控制台管理员可以控制企业内所有系统的存储和服务的访问。
 
-您不需要许可证或订阅即可开始使用NetApp控制台，并且只有当您需要在云中部署控制台代理以确保与存储系统或NetApp数据服务的连接时才需要付费。但是，一些可从控制台访问的NetApp数据服务是需要许可或基于订阅的。
+您不需要许可证或订阅即可开始使用NetApp Console，并且只有当您需要在云中部署控制台代理以确保与存储系统或NetApp数据服务的连接时才需要付费。但是，一些可从控制台访问的NetApp数据服务是需要许可或基于订阅的。
 
-详细了解 https://docs.netapp.com/us-en/bluexp-setup-admin/concept-overview.html["NetApp控制台"]。
+详细了解 https://docs.netapp.com/us-en/bluexp-setup-admin/concept-overview.html["NetApp Console"]。
 
 
 
-== 从NetApp控制台使用 FSx for ONTAP
+== 从NetApp Console使用 FSx for ONTAP
 
-在NetApp控制台系统页面，您可以创建和发现 FSx for ONTAP系统并使用系统管理器和其他NetApp服务。如果您要管理 FSx for ONTAP系统和在Amazon FSx for NetApp ONTAP上运行的工作负载，请使用 https://docs.netapp.com/us-en/workload-fsx-ontap/index.html["NetApp工作负载工厂"^]。
+在NetApp Console系统页面，您可以创建和发现 FSx for ONTAP系统并使用系统管理器和其他NetApp服务。如果您要管理 FSx for ONTAP系统和在Amazon FSx for NetApp ONTAP上运行的工作负载，请使用 https://docs.netapp.com/us-en/workload-fsx-ontap/index.html["NetApp Workload Factory"^]。
 
-link:../use/task-creating-fsx-working-environment.html["了解如何从NetApp控制台创建和发现 FSx for ONTAP系统"^] 。
+link:../use/task-creating-fsx-working-environment.html["了解如何从NetApp Console创建和发现 FSx for ONTAP系统"^] 。
 
 
 
@@ -49,15 +49,15 @@ link:../use/task-creating-fsx-working-environment.html["了解如何从NetApp控
 
 
 
-== NetApp控制台中的其他功能
+== NetApp Console中的其他功能
 
-* 在标准模式下使用NetApp Console 时支持 FSx for ONTAP ，它利用NetApp Console SaaS 层提供完整功能。不支持_Restricted_模式和_private_模式。
+* 在标准模式下使用NetApp Console时支持 FSx for ONTAP ，它利用NetApp Console SaaS 层提供完整功能。不支持_Restricted_模式和_private_模式。
 
 
-请参阅link:https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["NetApp控制台部署模式"^]了解更多信息。
+请参阅link:https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["NetApp Console部署模式"^]了解更多信息。
 
-* 使用link:https://docs.netapp.com/us-en/console-family/["NetApp控制台"^]以及 AWS 中的控制台代理，您可以创建和管理卷、复制数据以及将 FSx for ONTAP与NetApp云服务（例如NetApp数据分类和NetApp复制和同步）集成。
-* NetApp数据分类使用人工智能 (AI) 驱动的技术，可以帮助您了解数据上下文并识别驻留在 FSx for ONTAP帐户中的敏感数据。 https://docs.netapp.com/us-en/data-services-data-classification/concept-cloud-compliance.html["了解更多"^] 。
+* 使用link:https://docs.netapp.com/us-en/console-family/["NetApp Console"^]以及 AWS 中的控制台代理，您可以创建和管理卷、复制数据以及将 FSx for ONTAP与NetApp云服务（例如NetApp Data Classification和NetApp Copy and Sync）集成。
+* NetApp Data Classification使用人工智能 (AI) 驱动的技术，可以帮助您了解数据上下文并识别驻留在 FSx for ONTAP帐户中的敏感数据。 https://docs.netapp.com/us-en/data-services-data-classification/concept-cloud-compliance.html["了解更多"^] 。
 * 使用NetApp Copy and Sync，您可以自动将数据迁移到云端或本地的任何目标。 https://docs.netapp.com/us-en/data-services-copy-sync/concept-cloud-sync.html["了解更多"^]
 
 
@@ -65,7 +65,7 @@ link:../use/task-creating-fsx-working-environment.html["了解如何从NetApp控
 
 == 控制台代理和链接解锁所有 FSx for ONTAP功能
 
-控制台代理和链接支持NetApp控制台和Amazon FSx for NetApp ONTAP工作环境之间的连接和信任关系。控制台代理是在您的云或本地网络中运行的NetApp软件，并且链接使用 AWS Lambda 执行NetApp代码。您不需要控制台代理或链接即可在控制台中开始或创建 FSx for ONTAP系统，但您需要使用控制台代理或链接才能充分利用 FSx for ONTAP功能。
+控制台代理和链接支持NetApp Console和Amazon FSx for NetApp ONTAP工作环境之间的连接和信任关系。控制台代理是在您的云或本地网络中运行的NetApp软件，并且链接使用 AWS Lambda 执行NetApp代码。您不需要控制台代理或链接即可在控制台中开始或创建 FSx for ONTAP系统，但您需要使用控制台代理或链接才能充分利用 FSx for ONTAP功能。
 
 您需要控制台代理或链接才能使用以下功能：
 
@@ -94,7 +94,7 @@ link:../use/task-creating-fsx-working-environment.html["了解如何从NetApp控
 
 您的 FSx for ONTAP帐户由 AWS 维护，而不是由NetApp维护。参考 https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html["Amazon FSx for NetApp ONTAP入门指南"^]。
 
-使用 AWS 中的控制台代理或链接以及可选数据服务（例如NetApp数据分类和NetApp复制和同步）会产生额外费用。
+使用 AWS 中的控制台代理或链接以及可选数据服务（例如NetApp Data Classification和NetApp Copy and Sync）会产生额外费用。
 
 
 
@@ -108,4 +108,4 @@ https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services
 
 Amazon FSx for NetApp ONTAP是 AWS 第一方解决方案。如果您对 FSx for ONTAP文件系统、基础设施或任何使用此服务的解决方案有疑问或技术支持问题，请使用 AWS 管理控制台中的支持中心向 AWS 提交支持案例。选择“FSx for ONTAP”服务和适当的类别。提供创建 AWS 支持案例所需的其余信息。
 
-对于特定于NetApp控制台或NetApp存储解决方案和服务的一般和技术支持问题，您可以使用NetApp组织级序列号打开NetApp支持票证。你需要link:https://docs.netapp.com/us-en/console-fsx-ontap/support/task-support-registration.html["注册您的NetApp组织"^]激活支持。
+对于特定于NetApp Console或NetApp存储解决方案和服务的一般和技术支持问题，您可以使用NetApp组织级序列号打开NetApp支持票证。你需要link:https://docs.netapp.com/us-en/console-fsx-ontap/support/task-support-registration.html["注册您的NetApp组织"^]激活支持。

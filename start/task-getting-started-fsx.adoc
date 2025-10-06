@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: start/task-getting-started-fsx.html 
 keywords: Amazon FSx for NetApp ONTAP, fsx, netapp, data fabric, hybrid cloud, cloud, public cloud, networking, vpc, quick, getting started, install, installing, deploy, deploying, setup, setting up, launching, requirements, prerequisites, netapp console, get started, permissions, policy, iam policy, policies, attach, iam user, access key, secret key, keys, sign up, cloud manager, create, bluexp 
-summary: 通过添加凭证、创建控制台代理或链接以及创建或发现文件系统，在NetApp控制台中开始使用Amazon FSx for NetApp ONTAP。 
+summary: 通过添加凭证、创建控制台代理或链接以及创建或发现文件系统，在NetApp Console中开始使用Amazon FSx for NetApp ONTAP。 
 ---
 = Amazon FSx for NetApp ONTAP快速入门
 :hardbreaks:
@@ -14,15 +14,15 @@ summary: 通过添加凭证、创建控制台代理或链接以及创建或发�
 
 
 [role="lead"]
-通过添加凭证、创建控制台代理或链接以及创建或发现文件系统，在NetApp控制台中开始使用Amazon FSx for NetApp ONTAP。
+通过添加凭证、创建控制台代理或链接以及创建或发现文件系统，在NetApp Console中开始使用Amazon FSx for NetApp ONTAP。
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一个"] link:../requirements/task-setting-up-permissions-fsx.html["添加凭据和权限"]
 [role="quick-margin-para"]
-需要添加 AWS 凭证才能为NetApp控制台提供创建和管理 FSx for ONTAP文件系统所需的权限。您可以在_只读_和_读/写_权限之间进行选择。
+需要添加 AWS 凭证才能为NetApp Console提供创建和管理 FSx for ONTAP文件系统所需的权限。您可以在_只读_和_读/写_权限之间进行选择。
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["两个"]可选：创建控制台代理或链接
 [role="quick-margin-para"]
-要从NetApp控制台执行某些管理任务，您需要一个控制台代理或一个NetApp工作负载链接。  _控制台代理_是您在 VPC 中部署的虚拟机，用于管理 FSx for ONTAP文件系统。  _link_ 利用 AWS Lambda 创建与 FSx for ONTAP文件系统的信任关系和连接。
+要从NetApp Console执行某些管理任务，您需要一个控制台代理或一个NetApp工作负载链接。  _控制台代理_是您在 VPC 中部署的虚拟机，用于管理 FSx for ONTAP文件系统。  _link_ 利用 AWS Lambda 创建与 FSx for ONTAP文件系统的信任关系和连接。
 
 [role="quick-margin-list"]
 * link:../start/concept-fsx-aws.html#console-agents-and-links-unlock-all-fsx-for-ontap-features["了解 FSx for ONTAP管理何时需要控制台代理或链接"]
@@ -33,4 +33,4 @@ summary: 通过添加凭证、创建控制台代理或链接以及创建或发�
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三"] link:../use/task-create-fsx-system.html["创建或发现 FSx for ONTAP系统"]
 [role="quick-margin-para"]
-直接从NetApp控制台创建 FSx for ONTAP文件系统或发现您已在 AWS 环境中创建的文件系统。
+直接从NetApp Console创建 FSx for ONTAP文件系统或发现您已在 AWS 环境中创建的文件系统。

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: use/task-create-fsx-system.html 
 keywords: Amazon FSx for NetApp ONTAP, fsx, volumes, create system, delete system, access key, secret key, region, working environment, availability zones, discover, storage capacity, iops, throughput, security group, security, bluexp, NetApp Console 
-summary: 创建或发现 FSx for ONTAP文件系统，以便从NetApp控制台添加和管理卷和其他数据服务。 
+summary: 创建或发现 FSx for ONTAP文件系统，以便从NetApp Console添加和管理卷和其他数据服务。 
 ---
 = 创建或发现 FSx for ONTAP文件系统
 :hardbreaks:
@@ -14,13 +14,13 @@ summary: 创建或发现 FSx for ONTAP文件系统，以便从NetApp控制台添
 
 
 [role="lead"]
-创建或发现 FSx for ONTAP文件系统，以便从NetApp控制台添加和管理卷和其他数据服务。
+创建或发现 FSx for ONTAP文件系统，以便从NetApp Console添加和管理卷和其他数据服务。
 
 
 
 == 创建 FSx for ONTAP系统
 
-第一步是创建 FSx for ONTAP文件系统。如果您已在 AWS 管理控制台中创建了 FSx for ONTAP文件系统，则可以link:task-create-fsx-system.html#discover-an-existing-fsx-for-ontap-file-system["使用NetApp控制台发现它"]。
+第一步是创建 FSx for ONTAP文件系统。如果您已在 AWS 管理控制台中创建了 FSx for ONTAP文件系统，则可以link:task-create-fsx-system.html#discover-an-existing-fsx-for-ontap-file-system["使用NetApp Console发现它"]。
 
 .关于此任务
 创建文件系统时会创建一个存储虚拟机。
@@ -48,7 +48,7 @@ NOTE: 使用 Codebox 的 Terraform 时，您复制或下载的代码会隐藏 `f
 快速创建使您能够使用推荐的最佳实践配置。创建 FSx for ONTAP文件系统后，您可以更改大多数设置。
 
 .步骤
-. 从NetApp控制台菜单中，选择“*存储*”，然后选择“*管理*”。
+. 从NetApp Console菜单中，选择“*存储*”，然后选择“*管理*”。
 . 从系统页面选择*添加系统*。
 . 选择 *Amazon Web Services* 作为位置，然后为Amazon FSx for NetApp ONTAP选择 *添加新*。
 . 在创建 FSx for ONTAP文件系统页面上，选择*快速创建*。
@@ -114,7 +114,7 @@ NOTE: 使用 Codebox 的 Terraform 时，您复制或下载的代码会隐藏 `f
 .结果
 如果您创建了文件系统，则新的 FSx for ONTAP配置将显示在“系统”页面上。
 
-您可以通过多种方式管理 FSx for ONTAP文件系统，例如从NetApp控制台中的工作负载、使用ONTAP系统管理器以及使用 AWS CloudFormation。了解如何link:task-manage-fsx-systems.html["管理 FSx for ONTAP文件系统"] 。
+您可以通过多种方式管理 FSx for ONTAP文件系统，例如从NetApp Console中的工作负载、使用ONTAP系统管理器以及使用 AWS CloudFormation。了解如何link:task-manage-fsx-systems.html["管理 FSx for ONTAP文件系统"] 。
 
 --
 .高级创建
@@ -122,7 +122,7 @@ NOTE: 使用 Codebox 的 Terraform 时，您复制或下载的代码会隐藏 `f
 使用高级创建，您可以设置所有配置选项，包括可用性、安全性、备份和维护。
 
 .步骤
-. 从NetApp控制台菜单中，选择“*存储*”，然后选择“*管理*”。
+. 从NetApp Console菜单中，选择“*存储*”，然后选择“*管理*”。
 . 从系统页面选择*添加系统*。
 . 选择 *Amazon Web Services* 作为位置，然后为Amazon FSx for NetApp ONTAP选择 *添加新*。
 . 在创建 FSx for ONTAP页面上，选择 *高级创建*。
@@ -215,7 +215,7 @@ NOTE: 使用 Codebox 的 Terraform 时，您复制或下载的代码会隐藏 `f
 .结果
 如果您创建了文件系统，则新的 FSx for ONTAP配置将显示在“系统”页面上。
 
-您可以通过多种方式管理 FSx for ONTAP文件系统，例如从NetApp控制台中的工作负载、使用ONTAP系统管理器以及使用 AWS CloudFormation。了解如何link:task-manage-fsx-systems.html["管理 FSx for ONTAP文件系统"] 。
+您可以通过多种方式管理 FSx for ONTAP文件系统，例如从NetApp Console中的工作负载、使用ONTAP系统管理器以及使用 AWS CloudFormation。了解如何link:task-manage-fsx-systems.html["管理 FSx for ONTAP文件系统"] 。
 
 --
 ====
@@ -223,13 +223,13 @@ NOTE: 使用 Codebox 的 Terraform 时，您复制或下载的代码会隐藏 `f
 
 == 发现现有的 FSx for ONTAP文件系统
 
-如果您之前在NetApp控制台中提供了 AWS 凭证，则可以从可发现系统页面自动发现 FSx for ONTAP文件系统。您还可以查看可用的数据服务。
+如果您之前在NetApp Console中提供了 AWS 凭证，则可以从Discoverable systems页面自动发现 FSx for ONTAP文件系统。您还可以查看可用的数据服务。
 
 .关于此任务
 您只能在一个帐户内发现一次 FSx for ONTAP文件系统并将其附加到一个工作区。稍后可以删除文件系统并将其重新关联到不同的工作区。
 
 .步骤
-. 从NetApp控制台菜单中，选择 *存储*，然后选择 *管理*，再选择 *可发现的系统*。
+. 从NetApp Console菜单中，选择 *存储*，然后选择 *管理*，然后选择 *Discoverable systems*。
 . 显示已发现的 FSx for ONTAP文件系统的数量。选择*发现*。
 . 选择一个或多个文件系统，然后选择“发现”将其添加到“系统”页面。
 
@@ -242,4 +242,4 @@ NOTE: 使用 Codebox 的 Terraform 时，您复制或下载的代码会隐藏 `f
 
 ====
 .结果
-控制台在系统页面上显示您发现的 FSx for ONTAP文件系统。您可以通过多种方式管理 FSx for ONTAP文件系统，例如从NetApp控制台中的工作负载、使用ONTAP系统管理器以及使用 AWS CloudFormation。了解如何link:task-manage-fsx-systems.html["管理 FSx for ONTAP文件系统"] 。
+控制台在系统页面上显示您发现的 FSx for ONTAP文件系统。您可以通过多种方式管理 FSx for ONTAP文件系统，例如从NetApp Console中的工作负载、使用ONTAP系统管理器以及使用 AWS CloudFormation。了解如何link:task-manage-fsx-systems.html["管理 FSx for ONTAP文件系统"] 。
