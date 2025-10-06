@@ -1,0 +1,11 @@
+= 支持在两个 FSx for ONTAP文件系统之间复制数据
+:allow-uri-read: 
+
+
+
+
+=== 支持在两个 FSx for ONTAP文件系统之间复制数据
+
+现在可以从BlueXP控制台中的画布在两个 FSx for ONTAP文件系统之间进行数据复制。
+
+link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-manage-working-environment.html#replicate-data["复制数据"]

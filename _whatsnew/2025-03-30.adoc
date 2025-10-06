@@ -1,0 +1,11 @@
+= iam:SimulatePermissionPolicy 权限更新
+:allow-uri-read: 
+
+
+
+
+=== iam:SimulatePermissionPolicy 权限更新
+
+现在您可以管理 `iam:SimulatePrincipalPolicy`当您添加额外的 AWS 帐户凭证或添加新的工作负载功能（例如 GenAI 工作负载）时，可以从BlueXP控制台获得权限。
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/permissions-reference.html#change-log["权限参考变更日志"^]

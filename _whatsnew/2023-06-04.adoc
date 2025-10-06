@@ -1,0 +1,15 @@
+= 维护窗口开始时间
+:allow-uri-read: 
+
+
+
+
+=== 维护窗口开始时间
+
+什么时候link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-creating-fsx-working-environment.html#create-an-amazon-fsx-for-netapp-ontap-working-environment["创造工作环境"]，您可以指定每周 30 分钟维护窗口的开始时间，以确保维护不会与关键业务活动冲突。
+
+
+
+=== 使用 FlexGroups 分发卷数据
+
+创建卷时，您可以通过创建FlexGroup在卷之间分发数据来实现数据优化。

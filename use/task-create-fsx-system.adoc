@@ -1,0 +1,245 @@
+---
+sidebar: sidebar 
+permalink: use/task-create-fsx-system.html 
+keywords: Amazon FSx for NetApp ONTAP, fsx, volumes, create system, delete system, access key, secret key, region, working environment, availability zones, discover, storage capacity, iops, throughput, security group, security, bluexp, NetApp Console 
+summary: 创建或发现 FSx for ONTAP文件系统，以便从NetApp控制台添加和管理卷和其他数据服务。 
+---
+= 创建或发现 FSx for ONTAP文件系统
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+创建或发现 FSx for ONTAP文件系统，以便从NetApp控制台添加和管理卷和其他数据服务。
+
+
+
+== 创建 FSx for ONTAP系统
+
+第一步是创建 FSx for ONTAP文件系统。如果您已在 AWS 管理控制台中创建了 FSx for ONTAP文件系统，则可以link:task-create-fsx-system.html#discover-an-existing-fsx-for-ontap-file-system["使用NetApp控制台发现它"]。
+
+.关于此任务
+创建文件系统时会创建一个存储虚拟机。
+
+.开始之前
+在创建 FSx for ONTAP文件系统之前，您需要：
+
+* IAM 角色的 ARN，该角色为 Workload Factory 提供创建 FSx for ONTAP文件系统所需的权限。link:../requirements/task-setting-up-permissions-fsx.html["了解如何向 AWS 账户授予权限"^] 。
+* 您将在其中创建 FSx for ONTAP实例的区域和 VPC 信息。
+
+
+
+
+== 创建 FSx for ONTAP文件系统
+
+您可以使用“快速创建”或“高级创建”创建 FSx for ONTAP文件系统。您还可以使用 Codebox 中提供的以下工具：REST API、CloudFormation 和 Terraform。link:https://docs.netapp.com/us-en/workload-setup-admin/use-codebox.html#how-to-use-codebox["了解如何使用 Codebox 实现自动化"^] 。
+
+
+NOTE: 使用 Codebox 的 Terraform 时，您复制或下载的代码会隐藏 `fsxadmin`和 `vsadmin`密碼。运行代码时您需要重新输入密码。
+
+[role="tabbed-block"]
+====
+.快速创建
+--
+快速创建使您能够使用推荐的最佳实践配置。创建 FSx for ONTAP文件系统后，您可以更改大多数设置。
+
+.步骤
+. 从NetApp控制台菜单中，选择“*存储*”，然后选择“*管理*”。
+. 从系统页面选择*添加系统*。
+. 选择 *Amazon Web Services* 作为位置，然后为Amazon FSx for NetApp ONTAP选择 *添加新*。
+. 在创建 FSx for ONTAP文件系统页面上，选择*快速创建*。
++
+您还可以加载已保存的配置。
+
+. 在文件系统常规配置下，提供以下内容：
++
+.. *AWS 凭证*：选择添加 AWS 凭证或继续而不添加凭证。无需凭证，您可以从 Codebox 复制并下载部分完整的代码。该代码可以像模板一样使用，您可以在运行代码之前填写缺失的信息（例如，凭据）或自定义某些数据。
+.. *文件系统名称*：输入文件系统的名称。
+.. *部署拓扑*：选择部署拓扑。
++
+*** 扩展拓扑是指使用一个文件系统进行数据分发，并且可以增加其大小以适应数据增长。
+*** 横向扩展拓扑是指使用多个文件系统进行数据分发。
+
+
+.. *HA 对*：输入 HA 对的数量。
++
+*** 对于扩展部署，您只能拥有一个 HA 对。
+*** 对于横向扩展部署，您可以拥有 2 到 12 个 HA 对。
+
+
+.. *部署类型*：选择部署类型。
++
+*** 单可用区 (Single-AZ) 部署：通过监控硬件故障并在发生故障时自动更换基础设施组件来确保可用性。通过在可用区域内自动复制数据来保护其免受组件故障的影响，从而实现高耐用性。
+*** 多可用区 (Multi-AZ) 部署：即使可用区不可用，也能提供数据的持续可用性。多可用区文件系统支持单可用区文件系统的所有可用性和持久性功能。多可用区文件系统专为业务关键型生产工作负载而设计，这些工作负载需要对共享ONTAP文件数据具有高可用性，并且需要跨可用区内置复制的存储。
+
+
+.. *标签*：您可以选择添加最多 50 个标签。
+
+
+. 在“网络和安全”下的“区域和 VPC”字段中，选择文件系统的区域和 VPC。
+. 在*文件系统详细信息*下，提供以下内容：
++
+.. *SSD存储容量*：输入存储容量并选择存储容量单位。
+.. * ONTAP凭据*：输入您的ONTAP用户名和密码。
+.. *SMB/CIFS 设置*：可选。如果您计划使用 SMB/CIFS 协议访问卷，则必须在创建文件系统期间为存储 VM 配置 Active Directory。提供为此文件系统创建的存储虚拟机的以下详细信息。
++
+... *要加入的 Active Directory 域*：输入 Active Directory 的完全限定域名 (FQDN)。
+... *DNS IP 地址*：输入最多三个 DNS IP 地址，以逗号分隔。
+... *SMB 服务器 NetBIOS 名称*：输入要为存储 VM 创建的 Active Directory 计算机对象的 SMB 服务器 NetBIOS 名称。这是此存储虚拟机在 Active Directory 中的名称。
+... *用户名*：输入您现有的 Active Directory 中的服务帐户的用户名。
++
+不要包含域前缀或后缀。为了 `EXAMPLE\ADMIN`， 使用 `ADMIN`。
+
+... *密码*：输入服务帐户的密码。
+... *组织单位*：（可选）输入您打算为 FSx for ONTAP创建计算机帐户的组织单位的名称。  OU 是您想要加入文件系统的组织单位的可分辨路径名。
+... *委派管理员组*：（可选）输入 Active Directory 中可以管理文件系统的组的名称。
++
+如果您使用的是 AWS Managed Microsoft AD，则必须指定一个组，例如 AWS Delegated FSx Administrators、AWS Delegated Administrators 或对 OU 具有委派权限的自定义组。
+
++
+如果您要加入自我管理的 AD，请使用 AD 中的组名称。默认组是 `Domain Admins`。
+
+
+
+
+
+. 打开*摘要*来查看您定义的配置。如果需要，您可以在保存或创建文件系统之前更改任何设置。
+. 保存或创建文件系统。
+
+
+.结果
+如果您创建了文件系统，则新的 FSx for ONTAP配置将显示在“系统”页面上。
+
+您可以通过多种方式管理 FSx for ONTAP文件系统，例如从NetApp控制台中的工作负载、使用ONTAP系统管理器以及使用 AWS CloudFormation。了解如何link:task-manage-fsx-systems.html["管理 FSx for ONTAP文件系统"] 。
+
+--
+.高级创建
+--
+使用高级创建，您可以设置所有配置选项，包括可用性、安全性、备份和维护。
+
+.步骤
+. 从NetApp控制台菜单中，选择“*存储*”，然后选择“*管理*”。
+. 从系统页面选择*添加系统*。
+. 选择 *Amazon Web Services* 作为位置，然后为Amazon FSx for NetApp ONTAP选择 *添加新*。
+. 在创建 FSx for ONTAP页面上，选择 *高级创建*。
++
+您还可以加载已保存的配置。
+
+. 在文件系统常规配置下，提供以下内容：
++
+.. *AWS 凭证*：选择在 Workload Factory 中添加 AWS 凭证或继续不使用凭证。
+.. *文件系统名称*：输入文件系统的名称。
+.. *部署拓扑*：选择部署拓扑。
++
+*** 扩展拓扑是指使用一个文件系统进行数据分发，并且可以增加其大小以适应数据增长。
+*** 横向扩展拓扑是指使用多个文件系统进行数据分发。
+
+
+.. *HA 对*：输入 HA 对的数量。
++
+*** 对于扩展部署，您只能拥有一个 HA 对。
+*** 对于横向扩展部署，您可以拥有 2 到 12 个 HA 对。
+
+
+.. *部署类型*：选择部署类型。
++
+*** 单可用区 (Single-AZ) 部署：通过监控硬件故障并在发生故障时自动更换基础设施组件来确保可用性。通过在可用区域内自动复制数据来保护其免受组件故障的影响，从而实现高耐用性。
+*** 多可用区 (Multi-AZ) 部署：即使可用区不可用，也能提供数据的持续可用性。多可用区文件系统支持单可用区文件系统的所有可用性和持久性功能。多可用区文件系统专为业务关键型生产工作负载而设计，这些工作负载需要对共享ONTAP文件数据具有高可用性，并且需要跨可用区内置复制的存储。
+
+
+.. *标签*：您可以选择添加最多 50 个标签。
+
+
+. 在网络和安全下，提供以下内容：
++
+.. *区域和 VPC*：选择文件系统的区域和 VPC。
+.. *安全组*：创建或使用现有的安全组。
+.. *可用区域*：选择可用区域和子网。
++
+*** 对于集群配置节点 1：选择可用区域和子网。
+*** 对于集群配置节点 2：选择可用区域和子网。
+
+
+.. *VPC 路由表*：选择 VPC 路由表以启用客户端对卷的访问。
+.. *端点 IP 地址范围*：选择*VPC 之外的浮动 IP 地址范围*或*输入 IP 地址范围*并输入 IP 地址范围。
+.. *加密*：从下拉菜单中选择加密密钥名称。
+
+
+. 在文件系统详细信息下，提供以下信息：
++
+.. *SSD存储容量*：输入存储容量并选择存储容量单位。
+.. *Provisioned IOPS*：选择 *Automatic* 或 *User-provisioned*。
+.. *每个 HA 对的吞吐容量*：选择每个 HA 对的吞吐容量。
+.. * ONTAP凭据*：输入您的ONTAP用户名和密码。
+.. *存储 VM 凭据*：输入您的用户名。密码可以特定于此文件系统，或者您可以使用输入的ONTAP凭据相同的密码。
+.. *SMB/CIFS 设置*：可选。如果您计划使用 SMB/CIFS 协议访问卷，则必须在创建文件系统期间为存储 VM 配置 Active Directory。提供为此文件系统创建的存储虚拟机的以下详细信息。
++
+... *要加入的 Active Directory 域*：输入 Active Directory 的完全限定域名 (FQDN)。
+... *DNS IP 地址*：输入最多三个 DNS IP 地址，以逗号分隔。
+... *SMB 服务器 NetBIOS 名称*：输入要为存储 VM 创建的 Active Directory 计算机对象的 SMB 服务器 NetBIOS 名称。这是此存储虚拟机在 Active Directory 中的名称。
+... *用户名*：输入您现有的 Active Directory 中的服务帐户的用户名。
++
+不要包含域前缀或后缀。为了 `EXAMPLE\ADMIN`， 使用 `ADMIN`。
+
+... *密码*：输入服务帐户的密码。
+... *组织单位*：（可选）输入您打算为 FSx for ONTAP创建计算机帐户的组织单位的名称。  OU 是您想要加入文件系统的组织单位的可分辨路径名。
+... *委派管理员组*：（可选）输入 Active Directory 中可以管理文件系统的组的名称。
++
+如果您使用的是 AWS Managed Microsoft AD，则必须指定一个组，例如 AWS Delegated FSx Administrators、AWS Delegated Administrators 或对 OU 具有委派权限的自定义组。
+
++
+如果您要加入自我管理的 AD，请使用 AD 中的组名称。默认组是 `Domain Admins`。
+
+
+
+
+
+. 在备份和维护下，提供以下内容：
++
+.. *FSx for ONTAP Backup*：默认启用每日自动备份。如果需要，请禁用。
++
+... *自动备份保留期*：输入保留自动备份的天数。
+... *每日自动备份窗口*：选择*无偏好*（为您选择每日备份开始时间）或*选择每日备份的开始时间*并指定开始时间。
+... *每周维护窗口*：选择*无偏好*（为您选择每周维护窗口的开始时间）或*选择 30 分钟每周维护窗口的开始时间*并指定开始时间。
+
+
+
+
+. 保存或创建文件系统。
+
+
+.结果
+如果您创建了文件系统，则新的 FSx for ONTAP配置将显示在“系统”页面上。
+
+您可以通过多种方式管理 FSx for ONTAP文件系统，例如从NetApp控制台中的工作负载、使用ONTAP系统管理器以及使用 AWS CloudFormation。了解如何link:task-manage-fsx-systems.html["管理 FSx for ONTAP文件系统"] 。
+
+--
+====
+
+
+== 发现现有的 FSx for ONTAP文件系统
+
+如果您之前在NetApp控制台中提供了 AWS 凭证，则可以从可发现系统页面自动发现 FSx for ONTAP文件系统。您还可以查看可用的数据服务。
+
+.关于此任务
+您只能在一个帐户内发现一次 FSx for ONTAP文件系统并将其附加到一个工作区。稍后可以删除文件系统并将其重新关联到不同的工作区。
+
+.步骤
+. 从NetApp控制台菜单中，选择 *存储*，然后选择 *管理*，再选择 *可发现的系统*。
+. 显示已发现的 FSx for ONTAP文件系统的数量。选择*发现*。
+. 选择一个或多个文件系统，然后选择“发现”将其添加到“系统”页面。
+
+
+[NOTE]
+====
+* 如果您选择一个未命名的集群，您将收到输入该集群名称的提示。
+* 如果您选择的集群没有从控制台管理 FSx for ONTAP文件系统所需的凭据，您将收到选择具有所需权限的凭据的提示。
+
+
+====
+.结果
+控制台在系统页面上显示您发现的 FSx for ONTAP文件系统。您可以通过多种方式管理 FSx for ONTAP文件系统，例如从NetApp控制台中的工作负载、使用ONTAP系统管理器以及使用 AWS CloudFormation。了解如何link:task-manage-fsx-systems.html["管理 FSx for ONTAP文件系统"] 。

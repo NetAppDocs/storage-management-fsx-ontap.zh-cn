@@ -1,0 +1,294 @@
+---
+sidebar: sidebar 
+permalink: requirements/task-setting-up-permissions-fsx.html 
+keywords: fsx for ontap, iam, user role, permissions, credentials, bluexp 
+summary: 要创建或管理 FSx for ONTAP工作环境，您需要在NetApp控制台中添加 AWS 凭证，方法是提供 IAM 角色的 ARN，该角色授予从NetApp控制台创建 FSx for ONTAP系统所需的权限。 
+---
+= 设置 FSx for ONTAP的权限
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+要创建或管理 FSx for ONTAP工作环境，您需要在NetApp控制台中添加 AWS 凭证，方法是提供 IAM 角色的 ARN，该角色授予从NetApp控制台创建 FSx for ONTAP系统所需的权限。
+
+
+
+== 为什么需要 AWS 凭证
+
+需要 AWS 凭证才能从NetApp控制台创建和管理 FSx for ONTAP系统。您可以创建新的 AWS 凭证或将 AWS 凭证添加到现有组织。凭证提供从NetApp控制台管理 AWS 云环境中的资源和流程所需的权限。
+
+凭证和权限通过NetApp Workload Factory 进行管理。  Workload Factory 是一个生命周期管理平台，旨在帮助用户使用Amazon FSx for NetApp ONTAP文件系统优化工作负载。  NetApp控制台使用与 Workload Factory 相同的一组 AWS 凭证和权限。
+
+Workload Factory 界面为 FSx for ONTAP用户提供了启用存储、VMware、数据库和 GenAI 等工作负载功能以及选择工作负载权限的选项。  _Storage_ 是 Workload Factory 中的存储管理功能，也是您创建和管理 FSx for ONTAP文件系统所需启用和添加凭据的唯一功能。
+
+
+
+== 关于此任务
+
+在从 Workload Factory 中的存储为 FSx for ONTAP添加新凭证时，您需要决定要在哪个级别的权限或_操作模式_下进行操作。要发现和部署 AWS 资源（如 FSx for ONTAP文件系统），您需要_只读_或_读/写_权限。除非您选择“只读”模式或“读/写”模式，否则 FSx for ONTAP将以“基本”模式运行。  _只读_与查看权限相同。 _读/写_与操作权限相同。link:https://docs.netapp.com/us-en/workload-setup-admin/operational-modes.html["了解有关操作模式的更多信息"] 。
+
+可以从“*凭证*”页面上的“管理”菜单中查看新的和现有的 AWS 凭证。
+
+image:screenshot-netapp-console-administration-credentials.png["NetApp控制台管理菜单中突出显示的管理菜单和凭据选项的屏幕截图。"]
+
+您可以使用两种方法添加凭据：
+
+* *手动*：您在 Workload Factory 中添加凭证时在您的 AWS 账户中创建 IAM 策略和 IAM 角色。
+* *自动*：您捕获有关权限的最少量信息，然后使用 CloudFormation 堆栈为您的凭证创建 IAM 策略和角色。
+
+
+
+
+== 手动向帐户添加凭据
+
+您可以手动将 AWS 凭证添加到NetApp控制台，以授予您的帐户管理用于运行独特工作负载的 AWS 资源所需的权限。您添加的每组凭证都将包含一个或多个基于您要使用的工作负载功能的 IAM 策略，以及分配给您账户的 IAM 角色。
+
+创建凭证分为三个部分：
+
+* 选择您想要使用的服务和权限级别，然后从 AWS 管理控制台创建 IAM 策略。
+* 从 AWS 管理控制台创建 IAM 角色。
+* 在NetApp控制台中的“工作负载”中，输入名称并添加凭据。
+
+
+要创建或管理 FSx for ONTAP工作环境，您需要通过提供 IAM 角色的 ARN 将 AWS 凭证添加到NetApp控制台中的工作负载，该角色为工作负载提供创建 FSx for ONTAP工作环境所需的权限。
+
+.开始之前
+您需要拥有凭证才能登录您的 AWS 账户。
+
+.步骤
+. 从NetApp控制台菜单中，选择 *管理*，然后选择 *凭据*。
+. 从“组织凭证”页面中，选择“添加凭证”。
+. 选择 *Amazon Web Services*，然后选择 *FSx for ONTAP*，再选择 *Next*。
++
+您现在位于NetApp Workloads 中的“*添加凭据*”页面。
+
+. 选择*手动添加*，然后按照以下步骤填写_权限配置_下的三个部分。
+
+
+
+
+=== 步骤 1：选择存储功能并创建 IAM 策略
+
+在本节中，您将选择作为这些凭据的一部分进行管理的存储功能，以及为存储启用的权限。您还可以选择其他工作负载，如数据库、GenAI 或 VMware。做出选择后，您需要从 Codebox 复制每个选定工作负载的策略权限，并将其添加到 AWS 账户内的 AWS 管理控制台中以创建策略。
+
+.步骤
+. 从“创建策略”部分，启用您想要包含在这些凭据中的每个工作负载功能。启用*存储*来创建和管理文件系统。
++
+您可以稍后添加其他功能，因此只需选择当前想要部署和管理的工作负载即可。
+
+. 对于那些提供权限级别选择（只读或读/写）的工作负载功能，请选择这些凭据可用的权限类型。link:https://docs.netapp.com/us-en/workload-setup-admin/operational-modes.html["了解权限，也称为操作模式"^] 。
+. 可选：选择*启用自动权限检查*以检查您是否具有完成工作负载操作所需的 AWS 账户权限。启用检查将添加 `iam:SimulatePrincipalPolicy permission`您的许可政策。此权限的目的仅是为了确认权限。您可以在添加凭据后删除该权限，但我们建议保留它以防止为部分成功的操作创建资源并避免任何所需的手动资源清理。
+. 在 Codebox 窗口中，复制第一个 IAM 策略的权限。
++
+也可以从以下选项卡复制存储权限。
+
++
+[role="tabbed-block"]
+====
+.只读权限
+--
+[source, json]
+----
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "fsx:Describe*",
+        "fsx:ListTagsForResource",
+        "ec2:Describe*",
+        "kms:Describe*",
+        "elasticfilesystem:Describe*",
+        "kms:List*",
+        "cloudwatch:GetMetricData",
+        "cloudwatch:GetMetricStatistics"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:SimulatePrincipalPolicy"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+----
+--
+.读/写权限
+--
+[source, json]
+----
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "fsx:*",
+        "ec2:Describe*",
+        "ec2:CreateTags",
+        "ec2:CreateSecurityGroup",
+        "iam:CreateServiceLinkedRole",
+        "kms:Describe*",
+        "elasticfilesystem:Describe*",
+        "kms:List*",
+        "kms:CreateGrant",
+        "cloudwatch:PutMetricData",
+        "cloudwatch:GetMetricData",
+        "cloudwatch:GetMetricStatistics"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:AuthorizeSecurityGroupEgress",
+        "ec2:AuthorizeSecurityGroupIngress",
+        "ec2:RevokeSecurityGroupEgress",
+        "ec2:RevokeSecurityGroupIngress",
+        "ec2:DeleteSecurityGroup"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "ec2:ResourceTag/AppCreator": "NetappFSxWF"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:SimulatePrincipalPolicy"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+----
+--
+====
+. 打开另一个浏览器窗口并在 AWS 管理控制台中登录到您的 AWS 账户。
+. 打开 IAM 服务，然后选择 *策略* > *创建策略*。
+. 选择 JSON 作为文件类型，粘贴您在步骤 3 中复制的权限，然后选择 *下一步*。
+. 输入策略名称并选择*创建策略*。
+. 如果您在步骤 1 中选择了多个工作负载功能，请重复这些步骤为每组工作负载权限创建一个策略。
+
+
+
+
+=== 步骤 2：创建使用策略的 IAM 角色
+
+在本节中，您将设置 Workload Factory 将承担的 IAM 角色，其中包括您刚刚创建的权限和策略。
+
+.步骤
+. 在 AWS 管理控制台中，选择“角色”>“创建角色”。
+. 在 *受信任实体类型* 下，选择 *AWS 账户*。
++
+.. 选择 *另一个 AWS 账户*，然后从工作负载用户界面复制并粘贴 FSx for ONTAP工作负载管理的账户 ID。
+.. 选择*所需的外部 ID*，然后从工作负载用户界面复制并粘贴外部 ID。
+
+
+. 选择“下一步”。
+. 在权限策略部分，选择您之前定义的所有策略并选择*下一步*。
+. 输入角色名称并选择*创建角色*。
+. 复制角色 ARN。
+. 返回“工作负载添加凭证”页面，展开“创建角色”部分，然后将 ARN 粘贴到“角色 ARN”字段中。
+
+
+
+
+=== 步骤 3：输入名称并添加凭证
+
+最后一步是在工作负载中输入凭证的名称。
+
+.步骤
+. 在“工作负载添加凭据”页面中，展开“凭据名称”。
+. 输入您想要用于这些凭证的名称。
+. 选择“*添加*”来创建凭证。
+
+
+.结果
+凭证已创建并可在凭证页面上查看。现在，您可以在创建 FSx for ONTAP工作环境时使用这些凭据。无论何时需要，您都可以重命名凭据或将其从NetApp控制台中删除。
+
+
+
+== 使用 CloudFormation 向帐户添加凭证
+
+您可以使用 AWS CloudFormation 堆栈将 AWS 凭证添加到工作负载，方法是选择要使用的工作负载功能，然后在您的 AWS 账户中启动 AWS CloudFormation 堆栈。CloudFormation 将根据您选择的工作负载功能创建 IAM 策略和 IAM 角色。
+
+.开始之前
+* 您需要拥有凭证才能登录您的 AWS 账户。
+* 使用 CloudFormation 堆栈添加凭证时，您需要在 AWS 账户中拥有以下权限：
++
+[source, json]
+----
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:CreateStack",
+        "cloudformation:UpdateStack",
+        "cloudformation:DeleteStack",
+        "cloudformation:DescribeStacks",
+        "cloudformation:DescribeStackEvents",
+        "cloudformation:DescribeChangeSet",
+        "cloudformation:ExecuteChangeSet",
+        "cloudformation:ListStacks",
+        "cloudformation:ListStackResources",
+        "cloudformation:GetTemplate",
+        "cloudformation:ValidateTemplate",
+        "lambda:InvokeFunction",
+        "iam:PassRole",
+        "iam:CreateRole",
+        "iam:UpdateAssumeRolePolicy",
+        "iam:AttachRolePolicy",
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+----
+
+
+.步骤
+. 从NetApp控制台菜单中，选择 *管理*，然后选择 *凭据*。
+. 选择*添加凭证*。
+. 选择 *Amazon Web Services*，然后选择 *FSx for ONTAP*，再选择 *Next*。
++
+您现在位于NetApp Workloads 中的“*添加凭据*”页面。
+
+. 选择*通过 AWS CloudFormation 添加*。
+. 在“创建策略”下，启用您想要包含在这些凭据中的每个工作负载功能，并为每个工作负载选择一个权限级别。
++
+您可以稍后添加其他功能，因此只需选择当前想要部署和管理的工作负载即可。
+
+. 可选：选择*启用自动权限检查*以检查您是否具有完成工作负载操作所需的 AWS 账户权限。启用检查将添加 `iam:SimulatePrincipalPolicy`许可您的许可政策。此权限的目的仅是为了确认权限。您可以在添加凭据后删除该权限，但我们建议保留它以防止为部分成功的操作创建资源并避免任何所需的手动资源清理。
+. 在 *凭证名称* 下，输入您想要用于这些凭证的名称。
+. 从 AWS CloudFormation 添加凭证：
++
+.. 选择*添加*（或选择*重定向到 CloudFormation*），将显示“重定向到 CloudFormation”页面。
+.. 如果您在 AWS 中使用单点登录 (SSO)，请打开单独的浏览器选项卡并登录到 AWS 控制台，然后选择 *继续*。
++
+您应该登录 FSx for ONTAP文件系统所在的 AWS 账户。
+
+.. 从“重定向到 CloudFormation”页面选择“*继续*”。
+.. 在快速创建堆栈页面的功能下，选择*我确认 AWS CloudFormation 可能会创建 IAM 资源*。
+.. 选择*创建堆栈*。
+.. 从主菜单返回到*管理* > *凭证*页面，以验证新凭证是否正在进行中，或者是否已添加。
+
+
+
+
+.结果
+凭证已创建并可在凭证页面上查看。现在，您可以在创建 FSx for ONTAP工作环境时使用这些凭据。无论何时需要，您都可以重命名凭据或将其从NetApp控制台中删除。

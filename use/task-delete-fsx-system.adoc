@@ -1,0 +1,22 @@
+---
+sidebar: sidebar 
+permalink: use/task-delete-fsx-system.html 
+keywords: file system, delete file system, file system deletion 
+summary: 要从NetApp控制台删除文件系统，您必须首先删除与该文件系统关联的任何卷、存储虚拟机或复制关系。 
+---
+= 删除 FSx for ONTAP文件系统
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+要删除 FSx for ONTAP文件系统，您必须首先删除与该文件系统关联的任何卷、存储虚拟机或复制关系。
+
+.步骤
+. 从NetApp控制台菜单中，选择“*存储*”，然后选择“*管理*”。
+. 选择要删除的文件系统。
+. 选择*进入系统*。
+. 从存储中的 FSx for ONTAP中，选择三点菜单，然后选择 *删除*。
+. 选择*删除*确认删除。
+
