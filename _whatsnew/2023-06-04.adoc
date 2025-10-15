@@ -6,7 +6,7 @@
 
 === 维护窗口开始时间
 
-什么时候link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-creating-fsx-working-environment.html#create-an-amazon-fsx-for-netapp-ontap-working-environment["创造工作环境"]，您可以指定每周 30 分钟维护窗口的开始时间，以确保维护不会与关键业务活动冲突。
+什么时候link:https://docs.netapp.com/us-en/storage-management-fsx-ontap/use/task-create-fsx-system.html["创造工作环境"]，您可以指定每周 30 分钟维护窗口的开始时间，以确保维护不会与关键业务活动冲突。
 
 
 

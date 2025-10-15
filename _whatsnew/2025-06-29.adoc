@@ -8,4 +8,4 @@
 
 为 FSx for ONTAP文件系统设置凭据和权限后，您将被重定向到BlueXP凭据页面。在此页面中，您可以重命名或删除您的 FSx for ONTAP凭据。
 
-link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/requirements/task-setting-up-permissions-fsx.html["设置 FSx for ONTAP文件系统的权限"]
+link:https://docs.netapp.com/us-en/storage-management-fsx-ontap/requirements/task-setting-up-permissions-fsx.html["设置 FSx for ONTAP文件系统的权限"]
