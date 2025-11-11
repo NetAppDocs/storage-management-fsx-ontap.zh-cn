@@ -1,0 +1,11 @@
+= 支持本地ONTAP系统与 FSx for ONTAP文件系统之间的复制
+:allow-uri-read: 
+
+
+
+
+=== 支持本地ONTAP系统与 FSx for ONTAP文件系统之间的复制
+
+NetApp Console中的 FSx for ONTAP文件系统支持在本地ONTAP系统和 FSx for ONTAP文件系统之间进行数据复制。
+
+link:https://docs.netapp.com/us-en/storage-management-fsx-ontap/use/task-manage-fsx-systems.html#replicate-data["复制数据"]

@@ -97,8 +97,6 @@
   <block id="6b117b21bf1afabb5a312619e535e582" category="paragraph">凭证和权限通过NetApp Workload Factory进行管理。  Workload Factory 是一个生命周期管理平台，旨在帮助用户使用Amazon FSx for NetApp ONTAP文件系统优化工作负载。  NetApp Console使用与 Workload Factory 相同的一组 AWS 凭证和权限。</block>
   <block id="2eeecbf656db25d1c621552e4d4ca863" category="paragraph">Workload Factory 界面为 FSx for ONTAP用户提供了启用存储、VMware、数据库和 GenAI 等工作负载功能以及选择工作负载权限的选项。  _Storage_ 是 Workload Factory 中的存储管理功能，也是您创建和管理 FSx for ONTAP文件系统所需启用和添加凭据的唯一功能。</block>
   <block id="bbe48fb854ea022537208eeeff822f91" category="section-title">关于此任务</block>
-  <block id="4dacf6e0adb6ed0f64acd514a486bf8a" category="inline-link-macro">了解有关操作模式的更多信息</block>
-  <block id="a87a7657961ed8427e0ec863fc405fb4" category="paragraph">在从 Workload Factory 中的存储为 FSx for ONTAP添加新凭证时，您需要决定要在哪个级别的权限或_操作模式_下进行操作。要发现和部署 AWS 资源（如 FSx for ONTAP文件系统），您需要_只读_或_读/写_权限。除非您选择“只读”模式或“读/写”模式，否则 FSx for ONTAP将以“基本”模式运行。  _只读_与查看权限相同。 _读/写_与操作权限相同。<block ref="d6d34839020cc53cd6cb3ac295769611" category="inline-link-macro-rx"></block> 。</block>
   <block id="d396bcde35d40ba871e0e0c3704be40c" category="paragraph">可以从“*凭证*”页面上的“管理”菜单中查看新的和现有的 AWS 凭证。</block>
   <block id="b34e9b22e049f50831f2226787b16920" category="inline-image-macro">NetApp Console管理菜单中突出显示的管理菜单和凭据选项的屏幕截图。</block>
   <block id="3534442d318d2d9d6a10bd91ad30238d" category="paragraph"><block ref="3534442d318d2d9d6a10bd91ad30238d" category="inline-image-macro-rx" type="image"></block></block>
@@ -124,13 +122,8 @@
   <block id="643bb3986a2755c5582d9f82862ff934" category="paragraph">在本节中，您将选择作为这些凭据的一部分进行管理的存储功能，以及为存储启用的权限。您还可以选择其他工作负载，如数据库、GenAI 或 VMware。做出选择后，您需要从 Codebox 复制每个选定工作负载的策略权限，并将其添加到 AWS 账户内的 AWS 管理控制台中以创建策略。</block>
   <block id="eb73cd2a4bbc3dbb4bbab5f5a9b6fb8d" category="list-text">从“创建策略”部分，启用您想要包含在这些凭据中的每个工作负载功能。启用*存储*来创建和管理文件系统。</block>
   <block id="3b9b789374908017040d97f81eb4008d" category="paragraph">您可以稍后添加其他功能，因此只需选择当前想要部署和管理的工作负载即可。</block>
-  <block id="a488a73463d70a082950f1cd09a4be8c" category="inline-link-macro">了解权限，也称为操作模式</block>
-  <block id="173ea16b498d7c64e87a722e884ac9d6" category="list-text">对于那些提供权限级别选择（只读或读/写）的工作负载功能，请选择这些凭据可用的权限类型。<block ref="1b00b1a76801899cea6526d97ddbb2de" category="inline-link-macro-rx"></block> 。</block>
   <block id="04c38dfa84592feebab3e30dfe4a019a" category="list-text">可选：选择*启用自动权限检查*以检查您是否具有完成工作负载操作所需的 AWS 账户权限。启用检查将添加<block ref="23bd3e826a13b6d94db9e07f105dfed2" prefix=" " category="inline-code"></block>您的许可政策。此权限的目的仅是为了确认权限。您可以在添加凭据后删除该权限，但我们建议保留它以防止为部分成功的操作创建资源并避免任何所需的手动资源清理。</block>
   <block id="6d45b51df5e4b4d742aed3a012be7ece" category="list-text">在 Codebox 窗口中，复制第一个 IAM 策略的权限。</block>
-  <block id="45f2112a5aef07c91c1003cce4dc5410" category="paragraph">也可以从以下选项卡复制存储权限。</block>
-  <block id="afcef91c603f5a2caaca0c02452c1093" category="open-title">只读权限</block>
-  <block id="6c89d11178770d48b64eed2f5ad15ee0" category="open-title">读/写权限</block>
   <block id="d9951e6a22fb7f7d403d017e5b8ef9c6" category="list-text">打开另一个浏览器窗口并在 AWS 管理控制台中登录到您的 AWS 账户。</block>
   <block id="0545945650ae73f856cfac5d203df5f5" category="list-text">打开 IAM 服务，然后选择 *策略* &gt; *创建策略*。</block>
   <block id="27b582bcbcca0fd418f9f9f855710d0a" category="list-text">选择 JSON 作为文件类型，粘贴您在步骤 3 中复制的权限，然后选择 *下一步*。</block>
@@ -514,14 +507,10 @@
   <block id="4445ca9504f7ce2f198006088a6a0db6" category="paragraph">NetApp Data Classification使您能够扫描和分类组织混合多云中的数据。</block>
   <block id="9d79f74e1dd8a7371bdf2a808029dff7" category="inline-link-macro">开始使用NetApp Data Classification</block>
   <block id="ce269f36061333cca0642955f85d7893" category="paragraph"><block ref="ce269f36061333cca0642955f85d7893" category="inline-link-macro-rx"></block></block>
-  <block id="19b968cb9177960607f64a12abfa5472" category="paragraph">复制数据以支持备份和灾难恢复。可以使用NetApp Replication完成 FSx for ONTAP文件系统与Cloud Volumes ONTAP之间，或 FSx for ONTAP文件系统与本地ONTAP系统之间的数据复制。通过复制，您可以在ONTAP存储系统之间复制数据，以支持到云或云之间的备份和灾难恢复。</block>
   <block id="92b1e4e9a286587a318f472489c82e8e" category="inline-link-macro">开始使用NetApp Replication</block>
   <block id="6f9ae9c6f20f6845319426c218c26fa9" category="paragraph"><block ref="6f9ae9c6f20f6845319426c218c26fa9" category="inline-link-macro-rx"></block></block>
-  <block id="b6557cbd5121437883021e5b19d4db36" category="paragraph">可以通过NetApp Console系统页面在两个 FSx for ONTAP文件系统之间进行数据复制。</block>
   <block id="513c180c5d2a9ee1b68bcde16bb98445" category="paragraph">在开始之前请考虑以下事项。</block>
-  <block id="3149241572a82823e44abfd395fcbc2d" category="list-text">要在两个 FSx for ONTAP文件系统之间复制数据，您必须选择一个与文件系统具有连接的连接器或输入文件系统以关联链接。</block>
   <block id="28a7654ba403e8d0905895e340495ea0" category="list-text">对于处于可用、已创建或配置错误以外的状态的卷，以及ONTAP版本不兼容的卷，不支持复制。</block>
-  <block id="ab4ae954fd784a9ce0e9a2689965c28a" category="list-text">从NetApp Console系统页面中，将源 FSx for ONTAP文件系统拖到目标 FSx for ONTAP文件系统的顶部，然后选择 *复制*。</block>
   <block id="9793db8d97a651febf9f052b60487a84" category="list-text">在“创建复制”页面上，选择要复制的源卷，然后单击“下一步”。</block>
   <block id="5bc67df36eab9c2f7b3c55d3f683100e" category="list-text">在复制目标下，提供以下内容：</block>
   <block id="5b68795341e694ebff565b0ddc6697b3" category="list-text">*目标名称*：目标名称是在画布中执行拖放操作时先前选择的。</block>
@@ -715,4 +704,16 @@
   <block id="41f8e9d9e5f2e80fb5cebbaaaad76380" category="paragraph"><block ref="9e4b5c7d2719383d4b562647d96e828f" category="inline-link-macro-rx"></block>。</block>
   <block id="71c7be202aa5492f058c76c96014b63b" category="paragraph"><block ref="fb5df87a9aa49fef6376b2c5fbd872f7" category="inline-link-macro-rx"></block>。</block>
   <block id="d1ce6a0a7c0c88afef0bcb3a4052d20f" category="paragraph"><block ref="7a62940b2cbfbe2f0f4e47d8680ba67c" category="inline-link-macro-rx"></block>。</block>
+  <block id="fbbad2021b0a185cdad950acc088e8d4" category="doc">支持本地ONTAP系统与 FSx for ONTAP文件系统之间的复制</block>
+  <block id="6b3e3878a5fe9ddfda803127234f4a18" category="paragraph">NetApp Console中的 FSx for ONTAP文件系统支持在本地ONTAP系统和 FSx for ONTAP文件系统之间进行数据复制。</block>
+  <block id="fed6a821ac698aa9a5bb359850dda501" category="paragraph">要创建或管理 FSx for ONTAP文件系统，您需要在NetApp Console中添加 AWS 凭证，方法是提供 IAM 角色的 ARN，该角色授予从NetApp Console创建 FSx for ONTAP系统所需的权限。</block>
+  <block id="627148ff982de23897329c1203761c95" category="inline-link-macro">了解更多权限信息</block>
+  <block id="8917975c8444540f1ee9ac0cc5ca14cd" category="paragraph">在 Workload Factory 中从存储为 FSx for ONTAP添加新凭据时，您需要决定要授予哪些权限策略。要发现 AWS 资源（例如 FSx for ONTAP文件系统），您需要查看、规划和分析权限。要为ONTAP文件系统部署 FSx，您需要 _文件系统创建和删除_ 权限。无需权限即可对ONTAP上的 FSx 执行基本操作。<block ref="c61145cf60b5d306fe2b08006e1316ec" category="inline-link-macro-rx"></block>。</block>
+  <block id="a7dccda0e2845707c7752e43c8ec99c4" category="inline-link-macro">了解权限</block>
+  <block id="3accf22a176a1a0029ce245c84e87774" category="list-text">对于那些提供权限策略选择的工作负载功能，请选择使用这些凭据可获得的权限类型。<block ref="e5949275d6c97f4d8154c5ed72e8d3a9" category="inline-link-macro-rx"></block>。</block>
+  <block id="6f2324a9ef140c855ee143a6a8f3a97a" category="paragraph">复制数据以支持备份和灾难恢复。使用NetApp Replication可以实现 FSx for ONTAP文件系统和Cloud Volumes ONTAP之间的数据复制。通过复制，您可以在ONTAP存储系统之间复制数据，以支持到云或云之间的备份和灾难恢复。</block>
+  <block id="9a98b3cdae2120eee0c601730e2d0311" category="paragraph">在NetApp Console系统页面上，可以实现两个 FSx for ONTAP文件系统之间以及本地ONTAP系统与 FSx for ONTAP文件系统之间的数据复制。</block>
+  <block id="608f85440a5eadcbb4a9ce50bb7dda50" category="list-text">要在两个 FSx for ONTAP文件系统之间或在本地ONTAP系统和 FSx for ONTAP文件系统之间复制数据，您必须选择具有与文件系统连接的控制台代理，或者进入文件系统以关联链接。</block>
+  <block id="5f72153c430537b3e27deff7329da0d0" category="list-text">在NetApp Console系统页面中，将源 FSx for ONTAP文件系统或本地ONTAP系统拖到目标 FSx for ONTAP文件系统上，然后选择“复制”。</block>
+  <block id="1760c97f466ea374318a8c0bedcb2aff" category="section-title">2025年11月11日</block>
 </blocks>

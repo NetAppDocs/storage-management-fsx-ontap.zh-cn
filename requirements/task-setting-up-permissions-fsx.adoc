@@ -14,7 +14,7 @@ summary: 要创建或管理 FSx for ONTAP工作环境，您需要在NetApp Conso
 
 
 [role="lead"]
-要创建或管理 FSx for ONTAP工作环境，您需要在NetApp Console中添加 AWS 凭证，方法是提供 IAM 角色的 ARN，该角色授予从NetApp Console创建 FSx for ONTAP系统所需的权限。
+要创建或管理 FSx for ONTAP文件系统，您需要在NetApp Console中添加 AWS 凭证，方法是提供 IAM 角色的 ARN，该角色授予从NetApp Console创建 FSx for ONTAP系统所需的权限。
 
 
 
@@ -30,7 +30,7 @@ Workload Factory 界面为 FSx for ONTAP用户提供了启用存储、VMware、�
 
 == 关于此任务
 
-在从 Workload Factory 中的存储为 FSx for ONTAP添加新凭证时，您需要决定要在哪个级别的权限或_操作模式_下进行操作。要发现和部署 AWS 资源（如 FSx for ONTAP文件系统），您需要_只读_或_读/写_权限。除非您选择“只读”模式或“读/写”模式，否则 FSx for ONTAP将以“基本”模式运行。  _只读_与查看权限相同。 _读/写_与操作权限相同。link:https://docs.netapp.com/us-en/workload-setup-admin/operational-modes.html["了解有关操作模式的更多信息"] 。
+在 Workload Factory 中从存储为 FSx for ONTAP添加新凭据时，您需要决定要授予哪些权限策略。要发现 AWS 资源（例如 FSx for ONTAP文件系统），您需要查看、规划和分析权限。要为ONTAP文件系统部署 FSx，您需要 _文件系统创建和删除_ 权限。无需权限即可对ONTAP上的 FSx 执行基本操作。link:https://docs.netapp.com/us-en/workload-setup-admin/permissions-reference.html["了解更多权限信息"]。
 
 可以从“*凭证*”页面上的“管理”菜单中查看新的和现有的 AWS 凭证。
 
@@ -81,100 +81,9 @@ image:screenshot-netapp-console-administration-credentials.png["NetApp Console�
 +
 您可以稍后添加其他功能，因此只需选择当前想要部署和管理的工作负载即可。
 
-. 对于那些提供权限级别选择（只读或读/写）的工作负载功能，请选择这些凭据可用的权限类型。link:https://docs.netapp.com/us-en/workload-setup-admin/operational-modes.html["了解权限，也称为操作模式"^] 。
+. 对于那些提供权限策略选择的工作负载功能，请选择使用这些凭据可获得的权限类型。link:https://docs.netapp.com/us-en/workload-setup-admin/permissions-reference.html["了解权限"^]。
 . 可选：选择*启用自动权限检查*以检查您是否具有完成工作负载操作所需的 AWS 账户权限。启用检查将添加 `iam:SimulatePrincipalPolicy permission`您的许可政策。此权限的目的仅是为了确认权限。您可以在添加凭据后删除该权限，但我们建议保留它以防止为部分成功的操作创建资源并避免任何所需的手动资源清理。
 . 在 Codebox 窗口中，复制第一个 IAM 策略的权限。
-+
-也可以从以下选项卡复制存储权限。
-
-+
-[role="tabbed-block"]
-====
-.只读权限
---
-[source, json]
-----
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Action": [
-        "fsx:Describe*",
-        "fsx:ListTagsForResource",
-        "ec2:Describe*",
-        "kms:Describe*",
-        "elasticfilesystem:Describe*",
-        "kms:List*",
-        "cloudwatch:GetMetricData",
-        "cloudwatch:GetMetricStatistics"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
-        "iam:SimulatePrincipalPolicy"
-      ],
-      "Resource": "*"
-    }
-  ]
-}
-----
---
-.读/写权限
---
-[source, json]
-----
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Action": [
-        "fsx:*",
-        "ec2:Describe*",
-        "ec2:CreateTags",
-        "ec2:CreateSecurityGroup",
-        "iam:CreateServiceLinkedRole",
-        "kms:Describe*",
-        "elasticfilesystem:Describe*",
-        "kms:List*",
-        "kms:CreateGrant",
-        "cloudwatch:PutMetricData",
-        "cloudwatch:GetMetricData",
-        "cloudwatch:GetMetricStatistics"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
-        "ec2:AuthorizeSecurityGroupEgress",
-        "ec2:AuthorizeSecurityGroupIngress",
-        "ec2:RevokeSecurityGroupEgress",
-        "ec2:RevokeSecurityGroupIngress",
-        "ec2:DeleteSecurityGroup"
-      ],
-      "Resource": "*",
-      "Condition": {
-        "StringLike": {
-          "ec2:ResourceTag/AppCreator": "NetappFSxWF"
-        }
-      }
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
-        "iam:SimulatePrincipalPolicy"
-      ],
-      "Resource": "*"
-    }
-  ]
-}
-----
---
-====
 . 打开另一个浏览器窗口并在 AWS 管理控制台中登录到您的 AWS 账户。
 . 打开 IAM 服务，然后选择 *策略* > *创建策略*。
 . 选择 JSON 作为文件类型，粘贴您在步骤 3 中复制的权限，然后选择 *下一步*。
