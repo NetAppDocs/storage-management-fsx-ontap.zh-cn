@@ -488,7 +488,6 @@
   <block id="580649b6592437bd283b108bcef22b7d" category="inline-link">了解如何使用NetApp Workloads 管理文件系统</block>
   <block id="14aa34371e663d81da2ce38739cae4bc" category="paragraph"><block ref="14aa34371e663d81da2ce38739cae4bc" category="inline-link-rx"></block></block>
   <block id="9a7d7fe4ea2506122f2a5355c685706e" category="section-title">使用ONTAP系统管理器管理文件系统</block>
-  <block id="af8bf7a0f182ae1d5b8be3687794ca0c" category="paragraph">您可以使用ONTAP系统管理器界面直接从控制台管理 FSx for ONTAP文件系统。使用系统管理器需要控制台代理。</block>
   <block id="be0bf2e3af6b03378bb493466f3c335f" category="section-title">使用 Amazon CloudFormation 管理文件系统</block>
   <block id="e211b2db96a2f5b2b2868517a76988c8" category="paragraph">您可以使用 Amazon CloudFormation 配置和管理 FSx for ONTAP文件系统资源（卷、CIFS 共享、导出策略等）。</block>
   <block id="12980bf72a2406244df6aef483456919" category="inline-link-macro">NetApp CloudFormation FSx for ONTAP提供商 GitHub 存储库</block>
@@ -716,4 +715,11 @@
   <block id="5f72153c430537b3e27deff7329da0d0" category="list-text">在NetApp Console系统页面中，将源 FSx for ONTAP文件系统或本地ONTAP系统拖到目标 FSx for ONTAP文件系统上，然后选择“复制”。</block>
   <block id="1760c97f466ea374318a8c0bedcb2aff" category="section-title">2025年11月11日</block>
   <block id="1387404b18ce63590b24c55d54d3ff43" category="paragraph">在NetApp Console系统页面上，可以在本地ONTAP系统和 FSx for ONTAP文件系统之间进行数据复制。</block>
+  <block id="f3bb71c095338a2af8e23c9ae07072bf" category="doc">使用 AWS Lambda 链接时，系统管理器可用。</block>
+  <block id="b8cda09456e64356f2c1763e3e53d0af" category="inline-link-macro">了解如何使用链接进行高级ONTAP操作</block>
+  <block id="8a730f2606f493b8d797f6c96c460037" category="paragraph">ONTAP系统管理器界面可以与 AWS Lambda 链接一起使用，以执行高级ONTAP操作。这提供了一种替代使用系统管理器控制台代理的方案，可以直接从控制台管理ONTAP的 FSx 文件系统。 <block ref="3b6bcb03237efb7ff1ce82387184b37d" category="inline-link-macro-rx"></block></block>
+  <block id="2c0d3ac197a4a5c6ec443759849c532e" category="paragraph">您可以使用ONTAP系统管理器界面直接从控制台管理 FSx for ONTAP文件系统。使用系统管理器需要控制台代理或 AWS Lambda 链接。</block>
+  <block id="eedc611f4a0b9ac93cb166f88e46128a" category="inline-link-macro">了解如何使用链接</block>
+  <block id="61b7909f43b8222037001004e52dc71c" category="paragraph"><block ref="61b7909f43b8222037001004e52dc71c" category="inline-link-macro-rx"></block></block>
+  <block id="b566b4df138c2254f68b7631cba29c1d" category="section-title">2025年11月17日</block>
 </blocks>
