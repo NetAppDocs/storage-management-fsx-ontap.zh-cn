@@ -238,6 +238,7 @@ NOTE: 使用 Codebox 的 Terraform 时，您复制或下载的代码会隐藏 `f
 ====
 * 如果您选择一个未命名的集群，您将收到输入该集群名称的提示。
 * 如果您选择的集群没有从控制台管理 FSx for ONTAP文件系统所需的凭据，您将收到选择具有所需权限的凭据的提示。
+* 以下区域不支持发现：中国区域、GovCloud（美国）区域、Secret Cloud 和 Top Secret Cloud。
 
 
 ====
