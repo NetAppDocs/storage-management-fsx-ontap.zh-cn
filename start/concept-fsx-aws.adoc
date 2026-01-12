@@ -34,7 +34,7 @@ NetApp Console提供企业级跨本地和云环境的NetApp存储和数据服务
 
 在NetApp Console系统页面，您可以创建和发现 FSx for ONTAP系统并使用系统管理器和其他NetApp服务。如果您要管理 FSx for ONTAP系统和在Amazon FSx for NetApp ONTAP上运行的工作负载，请使用 https://docs.netapp.com/us-en/workload-fsx-ontap/index.html["NetApp Workload Factory"^]。
 
-link:../use/task-creating-fsx-working-environment.html["了解如何从NetApp Console创建和发现 FSx for ONTAP系统"^] 。
+link:../use/task-create-fsx-system.html["了解如何从NetApp Console创建和发现 FSx for ONTAP系统"]。
 
 
 

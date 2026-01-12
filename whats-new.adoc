@@ -217,8 +217,6 @@ link:https://docs.netapp.com/us-en/workload-fsx-ontap/learn-fsx-ontap.html#featu
 
 如果您正在寻找“高级视图”选项，该选项使您能够使用ONTAP系统管理器管理 FSx for ONTAP文件系统，那么您现在可以在选择工作环境后从BlueXP画布中找到该选项。
 
-image:https://raw.githubusercontent.com/NetAppDocs/bluexp-fsx-ontap/main/media/screenshot-system-manager.png["选择工作环境后， BlueXP Canvas 右侧面板的屏幕截图，其中显示了系统管理器选项。"]
-
 
 
 == 2023年7月30日
