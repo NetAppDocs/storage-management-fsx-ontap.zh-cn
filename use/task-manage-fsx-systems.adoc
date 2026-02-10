@@ -20,7 +20,7 @@ summary: 在NetApp Console中创建或发现 FSx for ONTAP系统后，您可以�
 
 == 使用NetApp Workloads 管理文件系统
 
-当您从NetApp Console系统页面打开 FSx for ONTAP系统时，您将进入NetApp工作负载。  Workloads 是一种智能优化和自动化服务，它使用行业最佳实践来设计、设置和操​​作使用Amazon FSx for NetApp ONTAP 的关键工作负载。
+当您从 NetApp Console 系统页面打开 FSx for ONTAP 系统时，您将进入 NetApp Workloads。Workloads 是一种智能优化和自动化服务，它使用行业最佳实践来规划、配置和操作使用 Amazon FSx for NetApp ONTAP 的关键工作负载。
 
 https://docs.netapp.com/us-en/workload-fsx-ontap/index.html["了解如何使用NetApp Workloads 管理文件系统"^]
 
@@ -69,100 +69,6 @@ link:https://docs.netapp.com/us-en/data-services-copy-sync/task-quick-start.html
 NetApp Data Classification使您能够扫描和分类组织混合多云中的数据。
 
 link:https://docs.netapp.com/us-en/data-services-data-classification/index.html["开始使用NetApp Data Classification"^]
-
-
-
-=== 复制数据
-
-复制数据以支持备份和灾难恢复。使用NetApp Replication可以实现 FSx for ONTAP文件系统和Cloud Volumes ONTAP之间的数据复制。通过复制，您可以在ONTAP存储系统之间复制数据，以支持到云或云之间的备份和灾难恢复。
-
-link:https://docs.netapp.com/us-en/data-services-replication/task-replicating-data.html["开始使用NetApp Replication"^]
-
-在NetApp Console系统页面上，可以实现两个 FSx for ONTAP文件系统之间以及本地ONTAP系统与 FSx for ONTAP文件系统之间的数据复制。
-
-.开始之前
-在开始之前请考虑以下事项。
-
-* 要在两个 FSx for ONTAP文件系统之间或在本地ONTAP系统和 FSx for ONTAP文件系统之间复制数据，您必须选择具有与文件系统连接的控制台代理，或者进入文件系统以关联链接。
-* 对于处于可用、已创建或配置错误以外的状态的卷，以及ONTAP版本不兼容的卷，不支持复制。
-
-
-.步骤
-. 在NetApp Console系统页面中，将源 FSx for ONTAP文件系统或本地ONTAP系统拖到目标 FSx for ONTAP文件系统上，然后选择“复制”。
-. 在“创建复制”页面上，选择要复制的源卷，然后单击“下一步”。
-. 在复制目标下，提供以下内容：
-+
-.. *目标名称*：目标名称是在画布中执行拖放操作时先前选择的。
-.. *存储虚拟机名称*：从下拉菜单中选择存储虚拟机。您选择的存储虚拟机是此复制关系中所有选定卷的目标。
-.. *卷名称*：目标卷名称自动生成，格式如下 `{OriginalVolumeName}_copy`。您可以使用自动生成的卷名或输入其他卷名。
-.. *用例*：选择以下其中一个用例进行复制。根据所选的用例，Workload Factory 会根据最佳实践在表单中填写推荐值。您可以接受建议的值，也可以在填写表格时进行更改。
-+
-*** 迁移：将您的数据传输到目标 FSx for ONTAP文件系统
-*** 热灾难恢复：确保关键工作负载的高可用性和快速灾难恢复
-*** 冷灾难恢复或存档灾难恢复：
-+
-**** 冷灾难恢复：使用更长的恢复时间目标（RTO）和恢复点对象（RPO）来降低成本
-**** 存档：复制数据以实现长期存储和合规性
-
-
-*** 其他
-+
-此外，用例选择决定了复制策略或SnapMirror策略（ONTAP）。用于描述复制策略的术语来自link:https://docs.netapp.com/us-en/ontap/data-protection/default-protection-policies-concept.html["ONTAP 9 文档"^]。
-
-+
-**** 对于迁移和其他，复制策略称为_MirrorAllSnapshots_。  _MirrorAllSnapshots_ 是一种异步策略，用于镜像所有快照和最新的活动文件系统。
-**** 对于热、冷或存档灾难恢复，复制策略称为_MirrorAndVault_。  _MirrorAndVault_ 是一种异步和保险库策略，用于镜像最新的活动文件系统以及每日和每周快照。
-+
-对于所有用例，如果您启用快照进行长期保留，则默认复制策略为_MirrorAndVault_。
-
-
-
-
-
-.. *分层策略*：选择目标卷中存储的数据的分层策略。分层策略默认为您选择的用例的推荐分层策略。
-+
-使用 Workload Factory 控制台创建卷时，_平衡（自动）_ 是默认分层策略。有关卷分层策略的更多信息，请参阅link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-storage-capacity.html#data-tiering-policy["卷存储容量"^]在 AWS FSx for NetApp ONTAP文档中。请注意，工作负载工厂在工作负载工厂控制台中使用基于用例的名称来制定分层策略，并在括号中包含 FSx for ONTAP分层策略名称。
-
-+
-如果您选择了迁移用例，Workload Factory 会自动选择将源卷的分层策略复制到目标卷。您可以取消选择复制分层策略并选择适用于选择进行复制的卷的分层策略。
-
-.. *最大传输速率*：选择*限制*并输入最大传输限制（MB/s）。或者，选择*无限制*。
-+
-如果没有限制，网络和应用程序性能可能会下降。或者，我们建议对于关键工作负载（例如主要用于灾难恢复的工作负载）使用 FSx for ONTAP文件系统的无限制传输速率。
-
-
-
-. 在复制设置下，提供以下内容：
-+
-.. *复制间隔*：选择快照从源卷传输到目标卷的频率。
-.. *长期保留*：可选地，启用快照以进行长期保留。长期保留使业务服务即使在整个站点发生故障时也能继续运行，支持应用程序使用辅助副本透明地进行故障转移。
-+
-没有长期保留的复制使用_MirrorAllSnapshots_策略。启用长期保留会将 _MirrorAndVault_ 策略分配给复制。
-
-+
-如果启用长期保留，则选择现有策略或创建新策略来定义要复制的快照和要保留的数量。
-
-+
-
-NOTE: 长期保留需要匹配的源标签和目标标签。如果需要，工作负载工厂可以为您创建缺失的标签。
-
-+
-*** *选择现有策略*：从下拉菜单中选择一个现有策略。
-*** *创建新策略*：输入*策略名称*。
-
-
-.. *不可变快照*：可选。选择“启用不可变快照”以防止在保留期内删除此策略中拍摄的快照。
-+
-*** 以小时、天、月或年为单位设置*保留期*。
-*** *快照策略*：在表格中，选择快照策略频率和要保留的副本数。您可以选择多个快照策略。
-
-
-
-
-
-
-. 选择“*创建*”。
-
 
 
 

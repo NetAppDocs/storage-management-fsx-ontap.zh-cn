@@ -346,7 +346,6 @@
   <block id="e7e9f49f4584c68b9d97c578e73b7583" category="list-text">在控制台的右上角，选择“帮助”图标，然后选择“*支持*”。</block>
   <block id="2974170a8b1b5b4a2ac69aacd4c1c9c3" category="list-text">从支持注册页面找到您的帐户 ID 序列号。</block>
   <block id="b50f0a46135bcb7083b1f2f82032fc26" category="inline-image-macro">帮助菜单的屏幕截图，其中支持是第一个选项</block>
-  <block id="379f9cd57d97013f3f7fdd24f692a0b1" category="paragraph"><block ref="379f9cd57d97013f3f7fdd24f692a0b1" category="inline-image-macro-rx" type="image"></block></block>
   <block id="dd50e314c18933734174c1156dd9237f" category="inline-link">NetApp 的支持注册网站</block>
   <block id="78f94e749b89d69dcbf3baff21ccb958" category="list-text">导航至<block ref="e1c4be66250fd76d5c52bfe2cb7daee2" category="inline-link-rx"></block>并选择*我不是注册的NetApp客户*。</block>
   <block id="d4f633ef130727b2776fa7f45024ca7d" category="list-text">填写必填字段（带有红色星号的字段）。</block>
@@ -369,7 +368,6 @@
   <block id="5bc1315a63455544e7a917a7cc968939" category="paragraph">这些 NSS 凭证与您的特定控制台帐户 ID 相关联。属于控制台组织的用户可以从*支持 &gt; NSS 管理*访问这些凭据。</block>
   <block id="328a2c1e7778e9edaf79d90c51409ac4" category="list-text">如果您有客户级帐户，则可以添加一个或多个 NSS 帐户。</block>
   <block id="e3cd99e4aa330ae6bdfb3754d83ae962" category="list-text">如果您有合作伙伴或经销商帐户，则可以添加一个或多个 NSS 帐户，但不能与客户级帐户一起添加。</block>
-  <block id="e8d4092baef6680c6a35d5228ae31de2" category="paragraph"><block ref="e8d4092baef6680c6a35d5228ae31de2" category="inline-image-macro-rx" type="image"></block></block>
   <block id="c0e0b7ff0de9558404e9b77ece42948a" category="list-text">选择*NSS 管理 &gt; 添加 NSS 帐户*。</block>
   <block id="85b9386ed443776127e099931d73448a" category="list-text">当出现提示时，选择“*继续*”以重定向到 Microsoft 登录页面。</block>
   <block id="d59e0b46782e48a01966e5c7ccc38d17" category="paragraph">NetApp使用 Microsoft Entra ID 作为特定于支持和许可的身份验证服务的身份提供者。</block>
@@ -381,8 +379,6 @@
   <block id="a04a3a5322782e8c18d0d64be7e1ccbc" category="paragraph">如果您已有客户级 NSS 帐户并尝试添加合作伙伴级帐户，情况也是如此。</block>
   <block id="1afe8a81cfddc9fa9559e272bb6b9496" category="list-text">成功登录后， NetApp将存储 NSS 用户名。</block>
   <block id="1dcb63fd55c4d22e87cb32275b8cc808" category="inline-image-macro">三个水平点的图标</block>
-  <block id="0dfcbbbe02d3e96f8ad78782e8772587" category="paragraph">这是系统生成的映射到您的电子邮件的 ID。在*NSS 管理*页面上，您可以显示来自<block ref="5151db0ded96d46f40ae09b5e5b167a1" category="inline-image-macro-rx" type="image"></block>菜单。</block>
-  <block id="fc79de85a483938f72fbcb9822ec0ae3" category="list-text">如果您需要刷新登录凭证令牌，还有一个*更新凭证*选项<block ref="5151db0ded96d46f40ae09b5e5b167a1" category="inline-image-macro-rx" type="image"></block>菜单。</block>
   <block id="b14d512a3c64fb5df16f6721b0603c63" category="paragraph">使用此选项会提示您再次登录。请注意，这些帐户的令牌将在 90 天后过期。我们将发布通知来提醒您此事。</block>
   <block id="fb88ab98d0ec536d50b32178bf99d0a5" category="summary">创建或发现 FSx for ONTAP文件系统，以便从NetApp Console添加和管理卷和其他数据服务。</block>
   <block id="47dffe46f483dc8772ef312e93c97c16" category="doc">创建或发现 FSx for ONTAP文件系统</block>
@@ -466,7 +462,6 @@
   <block id="3d524a57e639824787f68c6f88019427" category="doc">在NetApp Console中管理 FSx for ONTAP文件系统</block>
   <block id="2ec8c048ff53a4cbdbdfc16422f78635" category="paragraph">在NetApp Console中创建或发现 FSx for ONTAP系统后，您可以通过创建卷、管理存储虚拟机、保护数据和管理文件系统来管理文件系统。控制台还使您能够使用提供备份和恢复、数据分类、数据同步等功能的数据服务。</block>
   <block id="dd18b57adc37ce8de554a386a79bc9da" category="section-title">使用NetApp Workloads 管理文件系统</block>
-  <block id="78b4a72578eb8561c1acd4b3676233e6" category="paragraph">当您从NetApp Console系统页面打开 FSx for ONTAP系统时，您将进入NetApp工作负载。  Workloads 是一种智能优化和自动化服务，它使用行业最佳实践来设计、设置和操​​作使用Amazon FSx for NetApp ONTAP 的关键工作负载。</block>
   <block id="580649b6592437bd283b108bcef22b7d" category="inline-link">了解如何使用NetApp Workloads 管理文件系统</block>
   <block id="14aa34371e663d81da2ce38739cae4bc" category="paragraph"><block ref="14aa34371e663d81da2ce38739cae4bc" category="inline-link-rx"></block></block>
   <block id="9a7d7fe4ea2506122f2a5355c685706e" category="section-title">使用ONTAP系统管理器管理文件系统</block>
@@ -488,13 +483,9 @@
   <block id="4445ca9504f7ce2f198006088a6a0db6" category="paragraph">NetApp Data Classification使您能够扫描和分类组织混合多云中的数据。</block>
   <block id="9d79f74e1dd8a7371bdf2a808029dff7" category="inline-link-macro">开始使用NetApp Data Classification</block>
   <block id="ce269f36061333cca0642955f85d7893" category="paragraph"><block ref="ce269f36061333cca0642955f85d7893" category="inline-link-macro-rx"></block></block>
-  <block id="92b1e4e9a286587a318f472489c82e8e" category="inline-link-macro">开始使用NetApp Replication</block>
-  <block id="6f9ae9c6f20f6845319426c218c26fa9" category="paragraph"><block ref="6f9ae9c6f20f6845319426c218c26fa9" category="inline-link-macro-rx"></block></block>
   <block id="513c180c5d2a9ee1b68bcde16bb98445" category="paragraph">在开始之前请考虑以下事项。</block>
-  <block id="28a7654ba403e8d0905895e340495ea0" category="list-text">对于处于可用、已创建或配置错误以外的状态的卷，以及ONTAP版本不兼容的卷，不支持复制。</block>
   <block id="9793db8d97a651febf9f052b60487a84" category="list-text">在“创建复制”页面上，选择要复制的源卷，然后单击“下一步”。</block>
   <block id="5bc67df36eab9c2f7b3c55d3f683100e" category="list-text">在复制目标下，提供以下内容：</block>
-  <block id="5b68795341e694ebff565b0ddc6697b3" category="list-text">*目标名称*：目标名称是在画布中执行拖放操作时先前选择的。</block>
   <block id="562c87a680d962135f8e44bc0d159259" category="list-text">*存储虚拟机名称*：从下拉菜单中选择存储虚拟机。您选择的存储虚拟机是此复制关系中所有选定卷的目标。</block>
   <block id="56aeb18822215ccd01a9293a40c3b44a" category="list-text">*卷名称*：目标卷名称自动生成，格式如下<block ref="4b5beb37da0fa6444b7f9f92238aadb1" prefix=" " category="inline-code"></block>。您可以使用自动生成的卷名或输入其他卷名。</block>
   <block id="d3de0d39919d3426b0b013a4457e21ff" category="list-text">*用例*：选择以下其中一个用例进行复制。根据所选的用例，Workload Factory 会根据最佳实践在表单中填写推荐值。您可以接受建议的值，也可以在填写表格时进行更改。</block>
@@ -691,10 +682,6 @@
   <block id="8917975c8444540f1ee9ac0cc5ca14cd" category="paragraph">在 Workload Factory 中从存储为 FSx for ONTAP添加新凭据时，您需要决定要授予哪些权限策略。要发现 AWS 资源（例如 FSx for ONTAP文件系统），您需要查看、规划和分析权限。要为ONTAP文件系统部署 FSx，您需要 _文件系统创建和删除_ 权限。无需权限即可对ONTAP上的 FSx 执行基本操作。<block ref="c61145cf60b5d306fe2b08006e1316ec" category="inline-link-macro-rx"></block>。</block>
   <block id="a7dccda0e2845707c7752e43c8ec99c4" category="inline-link-macro">了解权限</block>
   <block id="3accf22a176a1a0029ce245c84e87774" category="list-text">对于那些提供权限策略选择的工作负载功能，请选择使用这些凭据可获得的权限类型。<block ref="e5949275d6c97f4d8154c5ed72e8d3a9" category="inline-link-macro-rx"></block>。</block>
-  <block id="6f2324a9ef140c855ee143a6a8f3a97a" category="paragraph">复制数据以支持备份和灾难恢复。使用NetApp Replication可以实现 FSx for ONTAP文件系统和Cloud Volumes ONTAP之间的数据复制。通过复制，您可以在ONTAP存储系统之间复制数据，以支持到云或云之间的备份和灾难恢复。</block>
-  <block id="9a98b3cdae2120eee0c601730e2d0311" category="paragraph">在NetApp Console系统页面上，可以实现两个 FSx for ONTAP文件系统之间以及本地ONTAP系统与 FSx for ONTAP文件系统之间的数据复制。</block>
-  <block id="608f85440a5eadcbb4a9ce50bb7dda50" category="list-text">要在两个 FSx for ONTAP文件系统之间或在本地ONTAP系统和 FSx for ONTAP文件系统之间复制数据，您必须选择具有与文件系统连接的控制台代理，或者进入文件系统以关联链接。</block>
-  <block id="5f72153c430537b3e27deff7329da0d0" category="list-text">在NetApp Console系统页面中，将源 FSx for ONTAP文件系统或本地ONTAP系统拖到目标 FSx for ONTAP文件系统上，然后选择“复制”。</block>
   <block id="1760c97f466ea374318a8c0bedcb2aff" category="section-title">2025年11月11日</block>
   <block id="1387404b18ce63590b24c55d54d3ff43" category="paragraph">在NetApp Console系统页面上，可以在本地ONTAP系统和 FSx for ONTAP文件系统之间进行数据复制。</block>
   <block id="f3bb71c095338a2af8e23c9ae07072bf" category="doc">使用 AWS Lambda 链接时，系统管理器可用。</block>
@@ -729,4 +716,30 @@
   <block id="4f1bd0ace83aba374b7ff69066a53c58" category="inline-xref">安全组详情</block>
   <block id="e41bac724f43b475f854e3aa1664b8de" category="paragraph">要创建新的安全组，请参阅 <block ref="592b894db662c6a6a8229aea3f9a37fa" category="inline-xref-macro-rx"></block> 有关安全组协议、端口和角色的描述。</block>
   <block id="0ebb1380b6abc3243f8c020aa97f25da" category="list-text">保存或创建文件系统。。结果</block>
+  <block id="e050f36de18bf9eec79dfa74451d3df0" category="doc">支持在 Cloud Volumes ONTAP 和 FSx for ONTAP 之间复制数据</block>
+  <block id="7736ebd5eab336ae9e7647e31955b0cc" category="paragraph">现在可以从 NetApp Console 在 Cloud Volumes ONTAP 系统和 FSx for ONTAP 文件系统之间进行数据复制。</block>
+  <block id="f319ee95d93a22851e4a5522d2273836" category="paragraph"><block ref="f319ee95d93a22851e4a5522d2273836" category="inline-link-macro-rx"></block></block>
+  <block id="38fc1b337c0ea26463916fc2913205c1" category="paragraph"><block ref="38fc1b337c0ea26463916fc2913205c1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7019a39846e9a2c7f7a80eaba91e4a41" category="paragraph"><block ref="7019a39846e9a2c7f7a80eaba91e4a41" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1d593c3f7480ada9580d93cd753c3f93" category="paragraph">这是一个系统生成的 ID，映射到您的电子邮件。在 *NSS Management* 页面上，您可以从 <block ref="5444f6f0c3983523c8933a1864b2b390" category="inline-image-macro-rx" type="image"></block> 菜单中显示您的电子邮件。</block>
+  <block id="872eaae7deb6035c20f9bfe6deefd03d" category="list-text">如果您需要刷新登录凭据令牌，<block ref="5444f6f0c3983523c8933a1864b2b390" category="inline-image-macro-rx" type="image"></block> 菜单中还有 *Update Credentials* 选项。</block>
+  <block id="e637038fd567011a59fd1e7148bf1b4f" category="paragraph">当您从 NetApp Console 系统页面打开 FSx for ONTAP 系统时，您将进入 NetApp Workloads。Workloads 是一种智能优化和自动化服务，它使用行业最佳实践来规划、配置和操作使用 Amazon FSx for NetApp ONTAP 的关键工作负载。</block>
+  <block id="255ed45341071970ff67a5a94aa268d9" category="doc">在 NetApp Console 中复制 FSx for ONTAP 数据</block>
+  <block id="a374db47ec4f6c8b0b47234eb4f19712" category="paragraph">复制数据以防止数据丢失，如果数据所在的区域发生灾难。FSx for ONTAP 文件系统与本地 ONTAP 系统或 Cloud Volumes ONTAP 之间支持数据复制。</block>
+  <block id="e481f3e818c1bf548144dff8b6c46360" category="paragraph">此操作为 FSx for ONTAP 文件系统、本地 ONTAP 系统或 Cloud Volumes ONTAP 系统中的源卷创建复制关系。</block>
+  <block id="99f375ee1d56d1983309c071fe9cb69a" category="paragraph">目标文件系统中的复制卷是数据保护 (DP) 卷，并遵循以下命名格式：<block ref="4b5beb37da0fa6444b7f9f92238aadb1" prefix=" " category="inline-code"></block>。</block>
+  <block id="329f7e1b4e95f05da5f05e33ca7af05a" category="list-text">若要在 FSx for ONTAP 和本地 ONTAP 或 Cloud Volumes ONTAP 之间复制数据，您必须选择一个连接到文件系统的 Console 代理，或输入文件系统以关联链接。<block ref="61b7909f43b8222037001004e52dc71c" category="inline-link-macro-rx"></block></block>
+  <block id="66de39f46af06b661b7bce68c01c8e61" category="list-text">不支持对处于可用、已创建或配置错误以外的状态以及 ONTAP 版本不兼容的卷执行复制。</block>
+  <block id="96ba6e4ef9df4a236ca029bbe4504ef8" category="list-text">从 NetApp Console 系统页面，将源 FSx for ONTAP 文件系统、本地 ONTAP 系统或 Cloud Volumes ONTAP 系统拖到目标 FSx for ONTAP 文件系统之上，然后选择*复制*。</block>
+  <block id="af523b162a02562eeefa105871379e55" category="list-text">*目标名称*：在 Console Systems 页面中将源存储系统拖放到目标系统上时应用了目标名称。</block>
+  <block id="837278414ab16e2a74dfc1b2102bcd54" category="list-text">*FSx for ONTAP 文件系统*：为目标 FSx for ONTAP 文件系统选择凭据、区域和 FSx for ONTAP 文件系统名称。</block>
+  <block id="33d481ba528452e02faf75a2f7350ee4" category="list-text">*S3 access point*：可选择连接 S3 access point，通过 AWS S3 API 访问驻留在 NFS 或 SMB/CIFS 卷上的 FSx for ONTAP 文件系统数据。仅支持文件访问类型。提供以下详细信息：</block>
+  <block id="41706ab07c21315a8c38172f78132df3" category="list-text">*S3 接入点名称*：输入 S3 接入点的名称。</block>
+  <block id="49abb21c910ce41b88d46bbe2dbec336" category="list-text">*User*：选择有权访问卷的现有用户或创建新用户。</block>
+  <block id="ce5abe58cc3ff0993fa9e0b2c6ad1340" category="list-text">*用户类型*：选择 *UNIX* 或 *Windows* 作为用户类型。</block>
+  <block id="acbb57d15a35fb35e9bb5b030da0d855" category="list-text">*网络配置*：选择 *Internet* 或 *Virtual private cloud (VPC)*。您选择的网络类型决定了接入点是可从互联网访问还是仅限于特定的 VPC。</block>
+  <block id="6c7b2c1264a7189632e27a922b67c8b7" category="inline-link-macro">Amazon S3 定价文档</block>
+  <block id="caabcc888415814c29639d089816b5fa" category="list-text">*启用元数据*：启用元数据会创建一个 S3 表，其中包含 S3 访问点可访问的所有对象，可用于审计、治理、自动、分析和优化。启用元数据会产生额外的 AWS 成本。有关详细信息，请参见 <block ref="af9c8757ba81fcc825b028513d05dce7" category="inline-link-macro-rx"></block>。</block>
+  <block id="56573dfcf7d1ac3cf78f2423725ccce8" category="list-text">*S3 接入点标签*：您最多可以添加 50 个标签（可选）。</block>
+  <block id="c9d872b23d54864ab58551a55106a3db" category="section-title">2026 年 2 月 09 日</block>
 </blocks>
