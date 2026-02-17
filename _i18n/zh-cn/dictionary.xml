@@ -742,7 +742,6 @@
   <block id="353d7ff4a3d58ad1fe8ef0ad6acab574" category="paragraph">NetApp Workload Factory 现在支持存储虚拟机的迁移。此功能允许将 ONTAP 存储系统数据和配置从本地 ONTAP 系统或第一代 FSx for ONTAP 文件系统迁移到第二代 FSx for ONTAP 文件系统。您可以复制存储虚拟机数据和配置设置以移动到新的文件系统，同时将停机时间和对用户和应用程序的中断降至最低。</block>
   <block id="fb2a77c6756f10fcc139a51a83349d7f" category="inline-link-macro">创建复制关系</block>
   <block id="33039f37667143e740ae3514cd2b2eea" category="inline-link-macro">切换 Storage VM 及其复制卷</block>
-  <block id="e6dbc21f7dea944e6aaaaa4c0d56159d" category="paragraph">要使用此功能，<block ref="a00423c4266b8832da7ddbc75235d0cb" category="inline-link-macro-rx"></block> 并选择 *Migration* 作为用例。要完成迁移过程，您必须 <block ref="4fbf2906eb98c7c630a3491ffc2b8863" category="inline-link-macro-rx"></block> 立即将数据和存储 VM 配置设置永久迁移到目标 FSx for ONTAP 文件系统。</block>
   <block id="a26acefb7c797c670c1c39de1408d5d6" category="doc">在 NetApp Console 中将数据复制到 FSx for ONTAP</block>
   <block id="f009487bcbb1861316ff956fce5c3ac3" category="paragraph">对于存储 VM 迁移，必须在创建复制关系后立即完成切换操作。</block>
   <block id="1b8db2e8955b459973ea9bfe988b7384" category="paragraph">复制可保护您的数据免受区域灾难的影响，并支持 Storage VM 迁移。</block>
@@ -763,8 +762,6 @@
   <block id="04e64253a4742b9534714d0147f467f6" category="paragraph">要迁移存储 VM 数据和配置设置，必须完成两个操作。</block>
   <block id="ca0c3dd7dca9f636af3209d526098e1e" category="inline-xref">创建复制关系</block>
   <block id="59835e5fb082d065015e2824a515a5b7" category="list-text"><block ref="75331dd4d9fa346165fac294e4e498ee" category="inline-xref-macro-rx"></block>，选择 *Migration* 作为用例，然后选择 *Replicate storage VM configuration*。</block>
-  <block id="db529797694203560d43ab415a6dd52d" category="inline-xref">切换复制</block>
-  <block id="4ff5e77c5ed7650b96676675b9d3eb18" category="list-text"><block ref="76a1fb9977d9fe48f9a1edf04990b3a3" category="inline-xref-macro-rx"></block> 将数据和配置设置从源文件系统永久迁移到目标 FSx for ONTAP 文件系统。</block>
   <block id="c7e68f063ccf0d86162e4964cc1abdf0" category="paragraph">要使用此功能，请创建</block>
   <block id="388c14942d26a5119b21a74fab9025a3" category="paragraph">在两个 FSx for ONTAP 文件系统之间、本地 ONTAP 系统和 FSx for ONTAP 文件系统之间，或者 Cloud Volumes ONTAP 和 FSx for ONTAP 文件系统之间复制数据。</block>
   <block id="0aa7d11dc16260c47faf9d5b0b642366" category="paragraph">在开始之前，请查看这些要求。</block>
@@ -792,4 +789,6 @@
   <block id="7b626244b5e77ec8426207a79760602c" category="inline-link-macro">修改分层策略</block>
   <block id="cdefdf2807f30b87eddcd4e17418772a" category="paragraph">切换后，源卷将被删除，目标卷变为读/写。切换后，您可以<block ref="16bce6d1c351d0b9dcc239287b000317" category="inline-link-macro-rx"></block>目标卷。</block>
   <block id="fb042b7b99959e391eeb7c417511098a" category="section-title">2026 年 2 月 16 日</block>
+  <block id="498aaff0cc400a96455ebb5b21ae7ffa" category="paragraph">要使用此功能，<block ref="a00423c4266b8832da7ddbc75235d0cb" category="inline-link-macro-rx"></block> 并选择 *Migration* 作为用例。要完成迁移过程，您必须 <block ref="26b59663dcf673cfcdf7f1e6b23597f9" category="inline-link-macro-rx"></block> 立即将数据和存储 VM 配置设置永久迁移到目标 FSx for ONTAP 文件系统。</block>
+  <block id="df319eebb5e9e4cde194e1e976bf0795" category="list-text"><block ref="7a9cdee14fa6d629f0d48ed18525f6a5" category="inline-xref-macro-rx"></block> 将数据和配置设置从源文件系统永久迁移到目标 FSx for ONTAP 文件系统。</block>
 </blocks>
