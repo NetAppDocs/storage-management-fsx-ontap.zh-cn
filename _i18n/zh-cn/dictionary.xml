@@ -791,4 +791,7 @@
   <block id="fb042b7b99959e391eeb7c417511098a" category="section-title">2026 年 2 月 16 日</block>
   <block id="498aaff0cc400a96455ebb5b21ae7ffa" category="paragraph">要使用此功能，<block ref="a00423c4266b8832da7ddbc75235d0cb" category="inline-link-macro-rx"></block> 并选择 *Migration* 作为用例。要完成迁移过程，您必须 <block ref="26b59663dcf673cfcdf7f1e6b23597f9" category="inline-link-macro-rx"></block> 立即将数据和存储 VM 配置设置永久迁移到目标 FSx for ONTAP 文件系统。</block>
   <block id="df319eebb5e9e4cde194e1e976bf0795" category="list-text"><block ref="7a9cdee14fa6d629f0d48ed18525f6a5" category="inline-xref-macro-rx"></block> 将数据和配置设置从源文件系统永久迁移到目标 FSx for ONTAP 文件系统。</block>
+  <block id="3acecbd4317d789f549785c17e6afb2c" category="doc">FSx for ONTAP 文件系统支持 NetApp Console 代理状态</block>
+  <block id="5088f4e07e6650891b34cd38ec19877b" category="paragraph">NetApp Console 现在显示工作负载中 FSx for ONTAP 文件系统的 Console 代理状态。状态指示代理是否正在运行并能够与 FSx for ONTAP 文件系统通信。这些信息可以帮助您解决连接问题。</block>
+  <block id="4aa1f4ce7ff97e69b143fbe399631234" category="section-title">2026 年 3 月 1 日</block>
 </blocks>
