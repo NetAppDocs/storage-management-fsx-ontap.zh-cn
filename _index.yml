@@ -3,7 +3,7 @@ indexpage:
   title: Amazon FSx for NetApp ONTAP管理
   summary: Amazon FSx for NetApp ONTAP将ONTAP的全部功能引入原生 AWS 托管服务，提供一致的混合云体验。本文档介绍如何在NetApp
     Console中管理 FSx for ONTAP 。
-  keywords: amazon, fsx, netapp, ontap, bluexp, create, manage, NetApp Console
+  keywords: amazon, fsx, netapp, ontap, create, manage, NetApp Console
   lead: Amazon FSx for NetApp ONTAP将ONTAP的全部功能引入原生 AWS 托管服务，提供一致的混合云体验。本文档介绍如何在NetApp
     Console中管理 FSx for ONTAP 。
   tiles:

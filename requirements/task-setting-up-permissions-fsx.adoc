@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: requirements/task-setting-up-permissions-fsx.html 
-keywords: fsx for ontap, iam, user role, permissions, credentials, bluexp 
+keywords: fsx for ontap, iam, user role, permissions, credentials 
 summary: 要创建或管理 FSx for ONTAP工作环境，您需要在NetApp Console中添加 AWS 凭证，方法是提供 IAM 角色的 ARN，该角色授予从NetApp Console创建 FSx for ONTAP系统所需的权限。 
 ---
 = 设置 FSx for ONTAP的权限

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: use/task-create-fsx-system.html 
-keywords: Amazon FSx for NetApp ONTAP, fsx, volumes, create system, delete system, access key, secret key, region, working environment, availability zones, discover, storage capacity, iops, throughput, security group, security, bluexp, NetApp Console 
+keywords: Amazon FSx for NetApp ONTAP, fsx, volumes, create system, delete system, access key, secret key, region, working environment, availability zones, discover, storage capacity, iops, throughput, security group, security, NetApp Console 
 summary: 创建或发现 FSx for ONTAP文件系统，以便从NetApp Console添加和管理卷和其他数据服务。 
 ---
 = 创建或发现 FSx for ONTAP文件系统
@@ -222,7 +222,7 @@ NOTE: 使用 Codebox 的 Terraform 时，您复制或下载的代码会隐藏 `f
 
 . 在备份和维护下，提供以下内容：
 +
-.. *FSx for ONTAP Backup*：默认启用每日自动备份。如果需要，请禁用。
+.. *卷备份*：默认情况下启用每日自动备份。如果需要，请禁用。
 +
 ... *自动备份保留期*：输入保留自动备份的天数。
 ... *每日自动备份窗口*：选择*无偏好*（为您选择每日备份开始时间）或*选择每日备份的开始时间*并指定开始时间。
