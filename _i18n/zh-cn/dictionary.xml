@@ -91,9 +91,6 @@
   <block id="bd88f5d8a1d52ec005c5976780f565ab" category="summary">要创建或管理 FSx for ONTAP工作环境，您需要在NetApp Console中添加 AWS 凭证，方法是提供 IAM 角色的 ARN，该角色授予从NetApp Console创建 FSx for ONTAP系统所需的权限。</block>
   <block id="8fad3d94a3385eeb6406613f49896cdd" category="doc">设置 FSx for ONTAP的权限</block>
   <block id="13f9bf1ee7de953172b557e8312ec6e4" category="section-title">为什么需要 AWS 凭证</block>
-  <block id="6ac7ea2b85486160098bf7719b2a2efd" category="paragraph">需要 AWS 凭证才能从NetApp Console创建和管理 FSx for ONTAP系统。您可以创建新的 AWS 凭证或将 AWS 凭证添加到现有组织。凭证提供从NetApp Console管理 AWS 云环境中的资源和流程所需的权限。</block>
-  <block id="6b117b21bf1afabb5a312619e535e582" category="paragraph">凭证和权限通过NetApp Workload Factory进行管理。  Workload Factory 是一个生命周期管理平台，旨在帮助用户使用Amazon FSx for NetApp ONTAP文件系统优化工作负载。  NetApp Console使用与 Workload Factory 相同的一组 AWS 凭证和权限。</block>
-  <block id="2eeecbf656db25d1c621552e4d4ca863" category="paragraph">Workload Factory 界面为 FSx for ONTAP用户提供了启用存储、VMware、数据库和 GenAI 等工作负载功能以及选择工作负载权限的选项。  _Storage_ 是 Workload Factory 中的存储管理功能，也是您创建和管理 FSx for ONTAP文件系统所需启用和添加凭据的唯一功能。</block>
   <block id="bbe48fb854ea022537208eeeff822f91" category="section-title">关于此任务</block>
   <block id="d396bcde35d40ba871e0e0c3704be40c" category="paragraph">可以从“*凭证*”页面上的“管理”菜单中查看新的和现有的 AWS 凭证。</block>
   <block id="b34e9b22e049f50831f2226787b16920" category="inline-image-macro">NetApp Console管理菜单中突出显示的管理菜单和凭据选项的屏幕截图。</block>
@@ -102,56 +99,40 @@
   <block id="ebb29cdb5a9f5368e3f445c808c91552" category="list-text">*手动*：您在 Workload Factory 中添加凭证时在您的 AWS 账户中创建 IAM 策略和 IAM 角色。</block>
   <block id="1a04b786edc8b8251d22307b11cb2a8d" category="list-text">*自动*：您捕获有关权限的最少量信息，然后使用 CloudFormation 堆栈为您的凭证创建 IAM 策略和角色。</block>
   <block id="3e704746794b6c6da13402ca9df54660" category="section-title">手动向帐户添加凭据</block>
-  <block id="0436081f5e755485ef83cd5e2cff7957" category="paragraph">您可以手动将 AWS 凭证添加到NetApp Console，以授予您的帐户管理用于运行独特工作负载的 AWS 资源所需的权限。您添加的每组凭证都将包含一个或多个基于您要使用的工作负载功能的 IAM 策略，以及分配给您账户的 IAM 角色。</block>
   <block id="ea106b6fa0504ddb53d4506dcd8e7755" category="paragraph">创建凭证分为三个部分：</block>
   <block id="b4968210d824a9808cbfac903e6a2461" category="list-text">选择您想要使用的服务和权限级别，然后从 AWS 管理控制台创建 IAM 策略。</block>
   <block id="3b022a10e2c2436d37f59e86b18713f7" category="list-text">从 AWS 管理控制台创建 IAM 角色。</block>
-  <block id="d134293f0e79557d8f817837f2ffd628" category="list-text">从NetApp Console中的“工作负载”中，输入名称并添加凭据。</block>
-  <block id="d80261d8e1789ada875dd9514c24b8fe" category="paragraph">要创建或管理 FSx for ONTAP工作环境，您需要通过提供 IAM 角色的 ARN 将 AWS 凭证添加到NetApp Console中的工作负载，该角色为工作负载提供创建 FSx for ONTAP工作环境所需的权限。</block>
   <block id="135b308ed83c53f1516b7c754566d1c4" category="paragraph-title">开始之前</block>
   <block id="36a8744ea109fc8ef18fd018d5d97aa0" category="paragraph">您需要拥有凭证才能登录您的 AWS 账户。</block>
   <block id="f3a29486bed19a90f2da6d007818b427" category="list-title">步骤</block>
   <block id="34ba06ab4c0d52cdf7ed2fa3961defbb" category="list-text">从NetApp Console菜单中，选择 *管理*，然后选择 *凭据*。</block>
   <block id="1e34a5d86e7e16c6c442d1977307e2d7" category="list-text">从“组织凭证”页面中，选择“添加凭证”。</block>
   <block id="fa6452c77972d8b4daaf92d6a7d82d49" category="list-text">选择 *Amazon Web Services*，然后选择 *FSx for ONTAP*，再选择 *Next*。</block>
-  <block id="3e641202d01950b463305362526bd0b5" category="paragraph">您现在位于NetApp Workloads 中的“*添加凭据*”页面。</block>
   <block id="c8df78ded4cea0598f7679f11a3c3246" category="list-text">选择*手动添加*，然后按照以下步骤填写_权限配置_下的三个部分。</block>
   <block id="facff49e2bd72676ffc323376c6f7c86" category="section-title">步骤 1：选择存储功能并创建 IAM 策略</block>
-  <block id="643bb3986a2755c5582d9f82862ff934" category="paragraph">在本节中，您将选择作为这些凭据的一部分进行管理的存储功能，以及为存储启用的权限。您还可以选择其他工作负载，如数据库、GenAI 或 VMware。做出选择后，您需要从 Codebox 复制每个选定工作负载的策略权限，并将其添加到 AWS 账户内的 AWS 管理控制台中以创建策略。</block>
-  <block id="eb73cd2a4bbc3dbb4bbab5f5a9b6fb8d" category="list-text">从“创建策略”部分，启用您想要包含在这些凭据中的每个工作负载功能。启用*存储*来创建和管理文件系统。</block>
   <block id="3b9b789374908017040d97f81eb4008d" category="paragraph">您可以稍后添加其他功能，因此只需选择当前想要部署和管理的工作负载即可。</block>
-  <block id="04c38dfa84592feebab3e30dfe4a019a" category="list-text">可选：选择*启用自动权限检查*以检查您是否具有完成工作负载操作所需的 AWS 账户权限。启用检查将添加<block ref="23bd3e826a13b6d94db9e07f105dfed2" prefix=" " category="inline-code"></block>您的许可政策。此权限的目的仅是为了确认权限。您可以在添加凭据后删除该权限，但我们建议保留它以防止为部分成功的操作创建资源并避免任何所需的手动资源清理。</block>
   <block id="6d45b51df5e4b4d742aed3a012be7ece" category="list-text">在 Codebox 窗口中，复制第一个 IAM 策略的权限。</block>
   <block id="d9951e6a22fb7f7d403d017e5b8ef9c6" category="list-text">打开另一个浏览器窗口并在 AWS 管理控制台中登录到您的 AWS 账户。</block>
   <block id="0545945650ae73f856cfac5d203df5f5" category="list-text">打开 IAM 服务，然后选择 *策略* &gt; *创建策略*。</block>
-  <block id="27b582bcbcca0fd418f9f9f855710d0a" category="list-text">选择 JSON 作为文件类型，粘贴您在步骤 3 中复制的权限，然后选择 *下一步*。</block>
   <block id="e8ea9480c70ef3b586604a914898eff0" category="list-text">输入策略名称并选择*创建策略*。</block>
   <block id="c240537b83fe8c59f5bb758e5c166662" category="list-text">如果您在步骤 1 中选择了多个工作负载功能，请重复这些步骤为每组工作负载权限创建一个策略。</block>
   <block id="eca99ccb2e04bfcfc06a9cb5860e53a9" category="section-title">步骤 2：创建使用策略的 IAM 角色</block>
   <block id="30551002ceb8abd5af0ee8907423b553" category="paragraph">在本节中，您将设置 Workload Factory 将承担的 IAM 角色，其中包括您刚刚创建的权限和策略。</block>
   <block id="c0a8070d8176ef21fdf6bc0d6b6833c9" category="list-text">在 AWS 管理控制台中，选择“角色”&gt;“创建角色”。</block>
   <block id="e506de832b98c2693eb3f400ef0722c0" category="list-text">在 *受信任实体类型* 下，选择 *AWS 账户*。</block>
-  <block id="1da59cee8d6ecfd86c9da2dfa8174268" category="list-text">选择 *另一个 AWS 账户*，然后从工作负载用户界面复制并粘贴 FSx for ONTAP工作负载管理的账户 ID。</block>
-  <block id="32e4328757960c9f593dd2343d2aeb43" category="list-text">选择*所需的外部 ID*，然后从工作负载用户界面复制并粘贴外部 ID。</block>
   <block id="e6cd86d61f4639c8a27006c6c29b3e9f" category="list-text">选择“下一步”。</block>
   <block id="552a0f683211339f8f7517a1d4fc804d" category="list-text">在权限策略部分，选择您之前定义的所有策略并选择*下一步*。</block>
   <block id="eb940e2ee0ec63786b166a518db881df" category="list-text">输入角色名称并选择*创建角色*。</block>
   <block id="38743fa9100c2dfb5d984fc45fed3de7" category="list-text">复制角色 ARN。</block>
-  <block id="1529f245482821144ee904a44a0a11d5" category="list-text">返回“工作负载添加凭证”页面，展开“创建角色”部分，然后将 ARN 粘贴到“角色 ARN”字段中。</block>
   <block id="c66b75fd4a0a3e3eff2094b970b0b897" category="section-title">步骤 3：输入名称并添加凭证</block>
-  <block id="61d956e6854ab93a5881af8294509b97" category="paragraph">最后一步是在工作负载中输入凭证的名称。</block>
-  <block id="0069f72adf3b3447ce31c42959992388" category="list-text">在“工作负载添加凭据”页面中，展开“凭据名称”。</block>
   <block id="a961eea4fc631a6689d895b16be74287" category="list-text">输入您想要用于这些凭证的名称。</block>
   <block id="027a8d7e43e765637f8ef1ae06ce3700" category="list-text">选择“*添加*”来创建凭证。</block>
   <block id="8eea62084ca7e541d918e823422bd82e" category="paragraph-title">结果</block>
-  <block id="7c3575dedda79e816797014fae96eda5" category="paragraph">凭证已创建并可在凭证页面上查看。现在，您可以在创建 FSx for ONTAP工作环境时使用这些凭据。无论何时需要，您都可以重命名凭据或将其从NetApp Console中删除。</block>
   <block id="5512d35e832df0796cf2e9bbfc4ef8e7" category="section-title">使用 CloudFormation 向帐户添加凭证</block>
-  <block id="c98e309d126aa2b94ba53d6b620ea05f" category="paragraph">您可以使用 AWS CloudFormation 堆栈将 AWS 凭证添加到工作负载，方法是选择要使用的工作负载功能，然后在您的 AWS 账户中启动 AWS CloudFormation 堆栈。  CloudFormation 将根据您选择的工作负载功能创建 IAM 策略和 IAM 角色。</block>
   <block id="f48f7e164b0415ad7634845f95eb03e1" category="list-text">使用 CloudFormation 堆栈添加凭证时，您需要在 AWS 账户中拥有以下权限：</block>
   <block id="8c4d8d6ab75350dc5209e22fd9107977" category="list-text">选择*添加凭证*。</block>
   <block id="4454b47599abbe986fcc1d78e9d5c3d5" category="list-text">选择*通过 AWS CloudFormation 添加*。</block>
   <block id="3534f18786c0daea2192750276eda6f0" category="list-text">在“创建策略”下，启用您想要包含在这些凭据中的每个工作负载功能，并为每个工作负载选择一个权限级别。</block>
-  <block id="c3c7c9c146408a0ee564eedba4821f52" category="list-text">可选：选择*启用自动权限检查*以检查您是否具有完成工作负载操作所需的 AWS 账户权限。启用检查将添加<block ref="19f5de89e4c667692a153296018e225f" prefix=" " category="inline-code"></block>许可您的许可政策。此权限的目的仅是为了确认权限。您可以在添加凭据后删除该权限，但我们建议保留它以防止为部分成功的操作创建资源并避免任何所需的手动资源清理。</block>
   <block id="fa7fbda40357a3d9d2b6286d82c737a8" category="list-text">在 *凭证名称* 下，输入您想要用于这些凭证的名称。</block>
   <block id="55af5349296de9cc03eea75eb011b988" category="list-text">从 AWS CloudFormation 添加凭证：</block>
   <block id="a83b560232f912e9085bc49e52b3b48b" category="list-text">选择*添加*（或选择*重定向到 CloudFormation*），将显示“重定向到 CloudFormation”页面。</block>
@@ -225,7 +206,6 @@
   <block id="cdbd850b4617286bd0b9fb37c42ae915" category="paragraph">需要添加 AWS 凭证才能为NetApp Console提供创建和管理 FSx for ONTAP文件系统所需的权限。您可以在_只读_和_读/写_权限之间进行选择。</block>
   <block id="aada29daee1d64ed0fe907043855cb7e" category="inline-image-macro">两个</block>
   <block id="535ffe13505ca1d9de92e311b54fa3ec" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block>可选：创建控制台代理或链接</block>
-  <block id="c970b62fa7cf5f61b27d9598445ae512" category="paragraph">要从NetApp Console执行某些管理任务，您需要一个控制台代理或一个NetApp工作负载链接。  _控制台代理_是您在 VPC 中部署的虚拟机，用于管理 FSx for ONTAP文件系统。  _link_ 利用 AWS Lambda 创建与 FSx for ONTAP文件系统的信任关系和连接。</block>
   <block id="46b0eea407e7bf43d175b724bd9af392" category="inline-link-macro">了解 FSx for ONTAP管理何时需要控制台代理或链接</block>
   <block id="7c8b4c1b1afb0bd40b9326ab59c69657" category="list-text"><block ref="7c8b4c1b1afb0bd40b9326ab59c69657" category="inline-link-macro-rx"></block></block>
   <block id="cf4709f0b7fac7a7e67b98f5cea5e8a8" category="inline-link">了解如何在 AWS 中创建控制台代理</block>
@@ -459,9 +439,6 @@
   <block id="82d112df39f74e9fcdd66e0e6d5aa12b" category="summary">在NetApp Console中创建或发现 FSx for ONTAP系统后，您可以管理文件系统并使用提供备份和恢复等功能的NetApp数据服务。</block>
   <block id="3d524a57e639824787f68c6f88019427" category="doc">在NetApp Console中管理 FSx for ONTAP文件系统</block>
   <block id="2ec8c048ff53a4cbdbdfc16422f78635" category="paragraph">在NetApp Console中创建或发现 FSx for ONTAP系统后，您可以通过创建卷、管理存储虚拟机、保护数据和管理文件系统来管理文件系统。控制台还使您能够使用提供备份和恢复、数据分类、数据同步等功能的数据服务。</block>
-  <block id="dd18b57adc37ce8de554a386a79bc9da" category="section-title">使用NetApp Workloads 管理文件系统</block>
-  <block id="580649b6592437bd283b108bcef22b7d" category="inline-link">了解如何使用NetApp Workloads 管理文件系统</block>
-  <block id="14aa34371e663d81da2ce38739cae4bc" category="paragraph"><block ref="14aa34371e663d81da2ce38739cae4bc" category="inline-link-rx"></block></block>
   <block id="9a7d7fe4ea2506122f2a5355c685706e" category="section-title">使用ONTAP系统管理器管理文件系统</block>
   <block id="be0bf2e3af6b03378bb493466f3c335f" category="section-title">使用 Amazon CloudFormation 管理文件系统</block>
   <block id="e211b2db96a2f5b2b2868517a76988c8" category="paragraph">您可以使用 Amazon CloudFormation 配置和管理 FSx for ONTAP文件系统资源（卷、CIFS 共享、导出策略等）。</block>
@@ -720,7 +697,6 @@
   <block id="7019a39846e9a2c7f7a80eaba91e4a41" category="paragraph"><block ref="7019a39846e9a2c7f7a80eaba91e4a41" category="inline-image-macro-rx" type="image"></block></block>
   <block id="1d593c3f7480ada9580d93cd753c3f93" category="paragraph">这是一个系统生成的 ID，映射到您的电子邮件。在 *NSS Management* 页面上，您可以从 <block ref="5444f6f0c3983523c8933a1864b2b390" category="inline-image-macro-rx" type="image"></block> 菜单中显示您的电子邮件。</block>
   <block id="872eaae7deb6035c20f9bfe6deefd03d" category="list-text">如果您需要刷新登录凭据令牌，<block ref="5444f6f0c3983523c8933a1864b2b390" category="inline-image-macro-rx" type="image"></block> 菜单中还有 *Update Credentials* 选项。</block>
-  <block id="e637038fd567011a59fd1e7148bf1b4f" category="paragraph">当您从 NetApp Console 系统页面打开 FSx for ONTAP 系统时，您将进入 NetApp Workloads。Workloads 是一种智能优化和自动化服务，它使用行业最佳实践来规划、配置和操作使用 Amazon FSx for NetApp ONTAP 的关键工作负载。</block>
   <block id="a374db47ec4f6c8b0b47234eb4f19712" category="paragraph">复制数据以防止数据丢失，如果数据所在的区域发生灾难。FSx for ONTAP 文件系统与本地 ONTAP 系统或 Cloud Volumes ONTAP 之间支持数据复制。</block>
   <block id="99f375ee1d56d1983309c071fe9cb69a" category="paragraph">目标文件系统中的复制卷是数据保护 (DP) 卷，并遵循以下命名格式：<block ref="4b5beb37da0fa6444b7f9f92238aadb1" prefix=" " category="inline-code"></block>。</block>
   <block id="66de39f46af06b661b7bce68c01c8e61" category="list-text">不支持对处于可用、已创建或配置错误以外的状态以及 ONTAP 版本不兼容的卷执行复制。</block>
@@ -828,4 +804,27 @@
   <block id="30f60d67f457bb040dffde52197a54da" category="section-title">相关信息</block>
   <block id="aadb221d48ad5912d16ae10d1a2f7515" category="inline-link-macro">修改分层策略</block>
   <block id="fc36a9d66532e35056304d11de6f9ae5" category="paragraph"><block ref="aac2c10b4c8f9f85b27f6266bbf93855" category="inline-link-macro-rx"></block> 切换后的目标卷。</block>
+  <block id="e53b35d192f3743794b3e37a24c7e92c" category="paragraph">从 NetApp Console 创建和管理 FSx for ONTAP 系统需要 AWS 凭据。您可以创建新凭据或将其添加到现有组织。凭据允许您从 NetApp Console 管理 AWS 资源。</block>
+  <block id="1817603d4a287805c966d1fe5b8286a1" category="paragraph">凭据和权限由 NetApp Workload Factory 管理。Workload Factory 是一个生命周期管理平台，旨在帮助用户管理和改进在 Amazon FSx for NetApp ONTAP 文件系统上运行的 VMware、EDA 和数据库工作负载。NetApp Console 和 Workload Factory 使用相同的 AWS 凭据和权限集。_Storage_ 是 Workload Factory 中的存储管理功能，它是您需要打开和添加凭据以创建和管理 FSx for ONTAP 文件系统的唯一功能。</block>
+  <block id="063ec75c7bab602d59faa10e680ab3e3" category="paragraph">您可以手动将 AWS 凭据添加到 NetApp Console，以授予您的帐户管理要使用的工作负载功能的权限，以及分配给您的帐户的 IAM 角色。</block>
+  <block id="4d8bf726f3b794264b3256fbe87868fa" category="list-text">在 NetApp Console 中输入名称并添加凭据。</block>
+  <block id="cd40e62e43c75b6162edf45210b3f179" category="paragraph">要创建或管理 FSx for ONTAP 文件系统，您需要通过提供 IAM 角色的 ARN 在 NetApp Console 中添加 AWS 凭据，该角色为 Workload Factory 提供创建 FSx for ONTAP 文件系统所需的权限。</block>
+  <block id="8c95ad8db882d1d7fcf92ae8b84c6845" category="paragraph">在本节中，您将选择使用这些凭据管理的存储功能以及存储权限。您还可以选择其他工作负载，如 Databases、GenAI 或 VMware。做出选择后，您需要从 Codebox 复制每个选定工作负载的策略权限，并将其添加到 AWS 帐户中的 AWS Management Console 中以创建策略。</block>
+  <block id="e30bfd182053376b581cf82c64ede77d" category="list-text">从 *Create permission policies* 部分，启用要包含在这些凭据中的每个工作负载功能。启用 *Storage* 以创建和管理文件系统。</block>
+  <block id="8805ce96ecd4d8940d5b991a7d94bf68" category="list-text">可选：选择*启用自动权限检查*以检查您是否具有所需的 AWS 帐户权限来完成工作负载操作。启用检查会将 <block ref="23bd3e826a13b6d94db9e07f105dfed2" prefix=" " category="inline-code"></block> 添加到您的权限策略中。此权限的目的仅用于确认权限。您可以在添加凭据后删除权限，但我们建议保留该权限，以便在某些步骤失败时停止创建资源并避免手动清理。</block>
+  <block id="3fe356da6fc520062babda17163306d2" category="list-text">选择 JSON 作为文件类型，粘贴您在步骤 4 中复制的权限，然后选择 *Next*。</block>
+  <block id="c053668d209688648f802b5a723845af" category="list-text">选择 *另一个 AWS 账户*，然后从 Console 用户界面复制并粘贴 FSx for ONTAP 工作负载管理的账户 ID。</block>
+  <block id="14ab243937003284978a33448a61431a" category="list-text">选择 *Required external ID* 并在 NetApp Console 用户界面中复制并粘贴外部 ID。</block>
+  <block id="b808e215c64681ee6fbd36051127b831" category="list-text">返回 NetApp Console 中的添加凭据页面，展开 *Create role* 部分，然后将 ARN 粘贴到 _Role ARN_ 字段中。</block>
+  <block id="8f1c8f28b91d5f4ff27e6e559ba71303" category="paragraph">最后一步是输入凭据的名称。</block>
+  <block id="0565d628b6ab1a709a696106d2ac6f20" category="list-text">在添加凭据页面中，展开 *凭据名称* 。</block>
+  <block id="c662aa264d68eeeb7d23abd07aa8e1d6" category="paragraph">Console 创建凭据并将其显示在凭据页面上。您可以使用、重命名或删除 NetApp Console 中的凭据。</block>
+  <block id="4c78422e6621ed7256b5d5ef117b7236" category="paragraph">您可以通过选择要使用的工作负载功能，然后在您的 AWS 账户中启动 AWS CloudFormation 堆栈，将 AWS 凭证添加到 NetApp Workload Factory。CloudFormation 将根据您选择的工作负载功能创建 IAM 策略和 IAM 角色。</block>
+  <block id="723d26dc27749569a11820256cc91716" category="paragraph">您现在位于 NetApp Workload Factory 的 *Add Credentials* 页面。</block>
+  <block id="1a3b59845cddbc873db73733ef4cd05c" category="list-text">可选：选择 *启用自动权限检查* 以检查您是否具有所需的 AWS 帐户权限来完成工作负载操作。启用检查会将 <block ref="19f5de89e4c667692a153296018e225f" prefix=" " category="inline-code"></block> 权限添加到您的权限策略中。此权限的目的仅是确认权限。您可以在添加凭据后删除该权限，但我们建议保留该权限，以便在某些步骤失败时停止创建资源并避免手动清理。</block>
+  <block id="75ae3f41f6146fb82090917121efc404" category="paragraph">要从 NetApp Console 执行某些管理任务，您需要 Console 代理或 NetApp Workload Factory 链接。_Console 代理_ 是您在 VPC 中部署的虚拟机，用于管理 FSx for ONTAP 文件系统。_链接_ 利用 AWS Lambda 创建信任关系并连接到您的 FSx for ONTAP 文件系统。</block>
+  <block id="7981c969ad619b2f30aad726503d9af3" category="section-title">使用 NetApp Workload Factory 管理文件系统</block>
+  <block id="77d0d30e7a54331923339cd4b481f87a" category="paragraph">当您从 NetApp Console 系统页面打开 FSx for ONTAP 系统时，您将进入 NetApp Workload Factory。NetApp Workload Factory 是一项智能优化和自动化服务，它使用行业最佳实践来规划、配置和操作使用 Amazon FSx for NetApp ONTAP 的关键工作负载。</block>
+  <block id="bd794697f728318e3eb013d378f93756" category="inline-link">了解如何使用 NetApp Workload Factory 管理文件系统</block>
+  <block id="7ccf7420ef554de52729730c921b7ed6" category="paragraph"><block ref="7ccf7420ef554de52729730c921b7ed6" category="inline-link-rx"></block></block>
 </blocks>
