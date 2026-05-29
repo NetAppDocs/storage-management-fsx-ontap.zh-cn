@@ -633,7 +633,6 @@
   <block id="73ff7e83001d865f3b8b3f3b309f7b7b" category="paragraph"><block ref="73ff7e83001d865f3b8b3f3b309f7b7b" category="inline-link-macro-rx"></block></block>
   <block id="f9497449a09595c4d23248602a3a1bc3" category="paragraph"><block ref="f9497449a09595c4d23248602a3a1bc3" category="inline-link-macro-rx"></block></block>
   <block id="d3ce4781c2dc4ba4dfa01f4c7e64f25f" category="list-text"><block ref="d3ce4781c2dc4ba4dfa01f4c7e64f25f" category="inline-link-macro-rx"></block></block>
-  <block id="6d360c2902addff4598434463c4c67e7" category="list-text"><block ref="6d360c2902addff4598434463c4c67e7" category="inline-link-macro-rx"></block></block>
   <block id="72d84220bc74a65487a313bd058edb1e" category="paragraph"><block ref="72d84220bc74a65487a313bd058edb1e" category="inline-link-macro-rx"></block></block>
   <block id="f6c0c8f8ded4c6640c1e912821c43739" category="paragraph"><block ref="f6c0c8f8ded4c6640c1e912821c43739" category="inline-link-macro-rx"></block></block>
   <block id="1e155daf6f11847fd4e4d8a7154301fd" category="inline-link-macro">NetApp Console发行说明。</block>
@@ -720,7 +719,6 @@
   <block id="38adbad92c37166c4ce64da1eb51513b" category="inline-link-macro">创建卷</block>
   <block id="0d2b6b8037148b2d54a1cf8b887418e7" category="paragraph">如果使用不可变文件复制源卷，则目标卷和文件系统将保持锁定状态，直到源卷的保留期结束。当您 <block ref="88d66b8875f0ded07f2f44fb2e4b70e3" category="inline-link-macro-rx"></block> FSx for ONTAP 文件系统时，不可变文件功能可用。</block>
   <block id="db02b80a9dd5a7c959ec87fdf41baa91" category="inline-link-macro">级联复制</block>
-  <block id="cb7048e2d3bbe74eff8dc77537e6b3cb" category="list-text">您可以复制一个源（读/写）卷或一个数据保护（DP）卷。支持级联复制，但不支持第三个跃点。详细了解 <block ref="70f3f574eb9d2048e3113fc3bf26173a" category="inline-link-macro-rx"></block>。</block>
   <block id="ed5b7e4aa04c57efe98d70f7ef15379d" category="section-title">迁移使用案例</block>
   <block id="1666b76635bd7b8ba7032286416076a1" category="paragraph">Workload Factory 支持以下存储系统之间的迁移复制。</block>
   <block id="c9bc20a670a5e3835c0109ab8efaf03d" category="list-text">本地 ONTAP 系统和适用于 ONTAP 的 FSx 文件系统</block>
@@ -827,4 +825,6 @@
   <block id="77d0d30e7a54331923339cd4b481f87a" category="paragraph">当您从 NetApp Console 系统页面打开 FSx for ONTAP 系统时，您将进入 NetApp Workload Factory。NetApp Workload Factory 是一项智能优化和自动化服务，它使用行业最佳实践来规划、配置和操作使用 Amazon FSx for NetApp ONTAP 的关键工作负载。</block>
   <block id="bd794697f728318e3eb013d378f93756" category="inline-link">了解如何使用 NetApp Workload Factory 管理文件系统</block>
   <block id="7ccf7420ef554de52729730c921b7ed6" category="paragraph"><block ref="7ccf7420ef554de52729730c921b7ed6" category="inline-link-rx"></block></block>
+  <block id="0ce459c51e344ed42fa3a4c5e5211577" category="list-text"><block ref="0ce459c51e344ed42fa3a4c5e5211577" category="inline-link-macro-rx"></block></block>
+  <block id="806a2b7e18f65da5e9f4288ad8e420ae" category="paragraph">您可以复制一个源（读/写）卷或一个数据保护（DP）卷。支持级联复制，但不支持第三个跃点。详细了解<block ref="0c64701c212ba4f059a9983b3d2a4857" category="inline-link-macro-rx"></block>。</block>
 </blocks>

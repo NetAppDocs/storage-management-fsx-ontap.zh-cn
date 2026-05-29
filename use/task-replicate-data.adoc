@@ -29,7 +29,7 @@ summary: 为 FSx for ONTAP 文件系统创建复制关系，以避免在 NetApp 
 
 [NOTE]
 ====
-您可以复制一个源（读/写）卷或一个数据保护（DP）卷。支持级联复制，但不支持第三个跃点。详细了解 link:https://review.docs.netapp.com/us-en/workload-fsx-ontap_cascade-replication/cascade-replication.html["级联复制"^]。
+您可以复制一个源（读/写）卷或一个数据保护（DP）卷。支持级联复制，但不支持第三个跃点。详细了解link:https://docs.netapp.com/us-en/workload-fsx-ontap/cascade-replication.html["级联复制"^]。
 
 ====
 
