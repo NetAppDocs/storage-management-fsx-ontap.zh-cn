@@ -35,6 +35,7 @@ Tracker 根据操作支持两种级别的监控。每个任务（例如文件系
 
 
 
+[[track-and-monitor-operations]]
 == 跟踪和监控操作
 
 使用 Tracker 跟踪和监控NetApp Console中的操作。
@@ -47,6 +48,7 @@ Tracker 根据操作支持两种级别的监控。每个任务（例如文件系
 
 
 
+[[view-api-request]]
 == 查看 API 请求
 
 在 Codebox 中查看 Tracker 中任务的 API 请求。
@@ -58,6 +60,7 @@ Tracker 根据操作支持两种级别的监控。每个任务（例如文件系
 
 
 
+[[retry-a-failed-operation]]
 == 重试失败的操作
 
 在 Tracker 中重试失败的操作。重试失败的操作将启动一个新任务，您可以在 Tracker 中监控该任务。
@@ -77,6 +80,7 @@ NOTE: 您只能重试一次失败的操作。
 
 
 
+[[edit-and-retry-a-failed-operation]]
 == 编辑并重试失败的操作
 
 编辑失败操作的参数并在 Tracker 之外重试该操作。

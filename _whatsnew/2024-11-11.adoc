@@ -4,6 +4,7 @@
 
 
 
+[[fsx-for-ontap-integrates-with-storage-in-bluexp-workload-factory]]
 === FSx for ONTAP与BlueXP Workload Factory 中的存储集成
 
 FSx for ONTAP文件系统管理任务（例如添加卷、扩展文件系统容量和管理存储虚拟机）现在由BlueXP workload factory进行管理，这是NetApp和Amazon FSx for NetApp ONTAP提供的一项新服务。您可以像以前一样使用现有的凭据和权限。不同之处在于，您现在可以从BlueXP workload factory执行更多操作来管理您的文件系统。当您从BlueXP画布打开 FSx for ONTAP工作环境时，您将直接进入BlueXP workload factory。

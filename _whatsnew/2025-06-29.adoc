@@ -4,6 +4,7 @@
 
 
 
+[[credentials-update]]
 === 凭证更新
 
 为 FSx for ONTAP文件系统设置凭据和权限后，您将被重定向到BlueXP凭据页面。在此页面中，您可以重命名或删除您的 FSx for ONTAP凭据。

@@ -4,6 +4,7 @@
 
 
 
+[[support-for-replicating-data-between-two-fsx-for-ontap-file-systems]]
 === 支持在两个 FSx for ONTAP文件系统之间复制数据
 
 现在可以从BlueXP控制台中的画布在两个 FSx for ONTAP文件系统之间进行数据复制。

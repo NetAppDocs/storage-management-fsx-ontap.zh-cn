@@ -4,6 +4,7 @@
 
 
 
+[[netapp-releases-additional-cloudformation-resources]]
 === NetApp发布更多 Clo​​udFormation 资源
 
 NetApp现在提供 CloudFormation 资源，允许客户利用 AWS 控制台中未公开的高级ONTAP组件。 CloudFormation 是 AWS 的基础设施即代码机制。您将能够创建复制关系、CIFS 共享、NFS 导出策略、快照等。
