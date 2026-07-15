@@ -21,7 +21,12 @@ summary: 了解Amazon FSx for NetApp ONTAP中的新功能。
 [[15-july-2026]]
 == 2026年7月15日
 
-未解决的指令，位于 <stdin> - include::.._whatsnew/2026-07-15.adoc[]
+
+
+[[genai-workload-removal-from-workloads-in-the-netapp-console]]
+=== 从 NetApp Console 中的工作负载中删除 GenAI 工作负载
+
+GenAI 工作负载已从 NetApp Console 中的工作负载中删除。
 
 
 
