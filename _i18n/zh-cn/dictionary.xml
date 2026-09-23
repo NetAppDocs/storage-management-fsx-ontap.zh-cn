@@ -89,7 +89,6 @@
   <block id="8cb8a166d04bec88a46718a93a0dbae2" category="inline-link">NetApp Console的法律声明</block>
   <block id="195b8adb08947e4bd61959a821198877" category="paragraph"><block ref="195b8adb08947e4bd61959a821198877" category="inline-link-rx"></block></block>
   <block id="bd88f5d8a1d52ec005c5976780f565ab" category="summary">要创建或管理 FSx for ONTAP工作环境，您需要在NetApp Console中添加 AWS 凭证，方法是提供 IAM 角色的 ARN，该角色授予从NetApp Console创建 FSx for ONTAP系统所需的权限。</block>
-  <block id="8fad3d94a3385eeb6406613f49896cdd" category="doc">设置 FSx for ONTAP的权限</block>
   <block id="13f9bf1ee7de953172b557e8312ec6e4" category="section-title">为什么需要 AWS 凭证</block>
   <block id="bbe48fb854ea022537208eeeff822f91" category="section-title">关于此任务</block>
   <block id="d396bcde35d40ba871e0e0c3704be40c" category="paragraph">可以从“*凭证*”页面上的“管理”菜单中查看新的和现有的 AWS 凭证。</block>
@@ -437,7 +436,6 @@
   <block id="b49fadafd6f71d37744771f81d0895ed" category="list-text">从存储中的 FSx for ONTAP中，选择三点菜单，然后选择 *删除*。</block>
   <block id="6b7a52834d577f2e4ac4d587036728f4" category="list-text">选择*删除*确认删除。</block>
   <block id="82d112df39f74e9fcdd66e0e6d5aa12b" category="summary">在NetApp Console中创建或发现 FSx for ONTAP系统后，您可以管理文件系统并使用提供备份和恢复等功能的NetApp数据服务。</block>
-  <block id="3d524a57e639824787f68c6f88019427" category="doc">在NetApp Console中管理 FSx for ONTAP文件系统</block>
   <block id="2ec8c048ff53a4cbdbdfc16422f78635" category="paragraph">在NetApp Console中创建或发现 FSx for ONTAP系统后，您可以通过创建卷、管理存储虚拟机、保护数据和管理文件系统来管理文件系统。控制台还使您能够使用提供备份和恢复、数据分类、数据同步等功能的数据服务。</block>
   <block id="9a7d7fe4ea2506122f2a5355c685706e" category="section-title">使用ONTAP系统管理器管理文件系统</block>
   <block id="be0bf2e3af6b03378bb493466f3c335f" category="section-title">使用 Amazon CloudFormation 管理文件系统</block>
@@ -475,7 +473,6 @@
   <block id="a1eefe5e0a806535abe58cb68a54c9d1" category="paragraph">对于所有用例，如果您启用快照进行长期保留，则默认复制策略为_MirrorAndVault_。</block>
   <block id="181b737a36ca59661f38fe5373437f6a" category="list-text">*分层策略*：选择目标卷中存储的数据的分层策略。分层策略默认为您选择的用例的推荐分层策略。</block>
   <block id="b3e9c4cd60af78168e1dfa0923b34db0" category="inline-link-macro">卷存储容量</block>
-  <block id="78e26b4f42ff9572ff33a0dbb9094105" category="paragraph">使用 Workload Factory 控制台创建卷时，_平衡（自动）_ 是默认分层策略。有关卷分层策略的更多信息，请参阅<block ref="de51d392f5d252a956349995f441f55c" category="inline-link-macro-rx"></block>在 AWS FSx for NetApp ONTAP文档中。请注意，工作负载工厂在工作负载工厂控制台中使用基于用例的名称来制定分层策略，并在括号中包含 FSx for ONTAP分层策略名称。</block>
   <block id="538da000f69d1359c086e0483675390f" category="paragraph">如果您选择了迁移用例，Workload Factory 会自动选择将源卷的分层策略复制到目标卷。您可以取消选择复制分层策略并选择适用于选择进行复制的卷的分层策略。</block>
   <block id="c0fb38c08c1fe26c6d51d93cc15693b0" category="list-text">*最大传输速率*：选择*限制*并输入最大传输限制（MB/s）。或者，选择*无限制*。</block>
   <block id="c498491de58eb1c7c7b811d5555b1afc" category="paragraph">如果没有限制，网络和应用程序性能可能会下降。或者，我们建议对于关键工作负载（例如主要用于灾难恢复的工作负载）使用 FSx for ONTAP文件系统的无限制传输速率。</block>
@@ -494,7 +491,6 @@
   <block id="26a9c35f8624cf9588da9df5229f10ce" category="inline-link-macro">开始使用NetApp Volume Caching</block>
   <block id="5b34ea6dcfe077d49a31cc3cf5e250cb" category="paragraph"><block ref="5b34ea6dcfe077d49a31cc3cf5e250cb" category="inline-link-macro-rx"></block></block>
   <block id="07dbd84dc76e5f414150543e3621c88a" category="summary">使用NetApp Console中的 Tracker 跟踪 FSx for ONTAP操作并监控操作进度。</block>
-  <block id="6041f961f7067357d8feb45a6180d001" category="doc">使用NetApp Console中的 Tracker 监控 FSx for ONTAP操作</block>
   <block id="26fdc2ed771e04e56f2a9961462dec97" category="paragraph">监控和跟踪 FSx for ONTAP操作的执行情况，并使用NetApp Console中的 Tracker 监控作业进度。</block>
   <block id="13bdc4d0deb3d8b5a245f65276234a2c" category="paragraph">NetApp Console提供了 Tracker（一项作业监控功能），因此您可以监控和跟踪凭证、FSx for ONTAP和链接操作的进度和状态，查看操作任务和子任务的详细信息，并诊断任何问题或故障。</block>
   <block id="6092aff2fd96382c8039bf4b05f69f42" category="paragraph">Tracker 中提供了多种操作。您可以按时间范围（过去 24 小时、7 天、14 天或 30 天）、工作量、状态和用户筛选作业；使用搜索功能查找作业；并将作业表下载为 CSV 文件。您可以随时刷新追踪器。您可以快速重试失败的操作或编辑失败操作的参数并再次尝试该操作。</block>
@@ -530,7 +526,6 @@
   <block id="9ee78825a71be6f2186eeff17cc5bced" category="paragraph">您将被重定向到操作页面，例如卷创建，您可以在其中编辑参数并重试操作。</block>
   <block id="49814788ce382c87a117a40e54ae858b" category="paragraph">操作已重新启动。前往 Tracker 查看操作状态。</block>
   <block id="bb918533d77dbb5a00111eac934ac64a" category="summary">从NetApp Console中的项目中删除 FSx for ONTAP文件系统。</block>
-  <block id="d53d3a848ddd1dfe6133b3d5925c0fda" category="doc">从项目中删除 FSx for ONTAP文件系统</block>
   <block id="eed3f02d8949620862afeddee99a07d8" category="paragraph">从NetApp Console中的项目中删除 FSx for ONTAP文件系统。此操作将文件系统与一个项目分离，以便您可以将其与同一帐户内的另一个项目关联。</block>
   <block id="7bded6d1c93c014e3bfcf6f8c957035f" category="paragraph">从项目中删除 FSx for ONTAP文件系统会将其从NetApp Console中删除。它不会删除 FSx for ONTAP文件系统。您稍后可以在同一个帐户内相同或不同的项目中重新发现 FSx for ONTAP文件系统。</block>
   <block id="1a360ffc89a3460e1b84b1fc3ffc90b4" category="list-text">从存储中的 FSx for ONTAP中，选择三点菜单，然后选择*从项目中删除*。</block>
@@ -711,7 +706,6 @@
   <block id="353d7ff4a3d58ad1fe8ef0ad6acab574" category="paragraph">NetApp Workload Factory 现在支持存储虚拟机的迁移。此功能允许将 ONTAP 存储系统数据和配置从本地 ONTAP 系统或第一代 FSx for ONTAP 文件系统迁移到第二代 FSx for ONTAP 文件系统。您可以复制存储虚拟机数据和配置设置以移动到新的文件系统，同时将停机时间和对用户和应用程序的中断降至最低。</block>
   <block id="fb2a77c6756f10fcc139a51a83349d7f" category="inline-link-macro">创建复制关系</block>
   <block id="33039f37667143e740ae3514cd2b2eea" category="inline-link-macro">切换 Storage VM 及其复制卷</block>
-  <block id="a26acefb7c797c670c1c39de1408d5d6" category="doc">在 NetApp Console 中将数据复制到 FSx for ONTAP</block>
   <block id="1b8db2e8955b459973ea9bfe988b7384" category="paragraph">复制可保护您的数据免受区域灾难的影响，并支持 Storage VM 迁移。</block>
   <block id="38adbad92c37166c4ce64da1eb51513b" category="inline-link-macro">创建卷</block>
   <block id="0d2b6b8037148b2d54a1cf8b887418e7" category="paragraph">如果使用不可变文件复制源卷，则目标卷和文件系统将保持锁定状态，直到源卷的保留期结束。当您 <block ref="88d66b8875f0ded07f2f44fb2e4b70e3" category="inline-link-macro-rx"></block> FSx for ONTAP 文件系统时，不可变文件功能可用。</block>
@@ -797,7 +791,6 @@
   <block id="b33f176ae89f054db5b204e18e50bedb" category="list-text">如果源存储虚拟机中有缓存卷，则重新创建缓存关系（ONTAP FlexCache 关系）。</block>
   <block id="30f60d67f457bb040dffde52197a54da" category="section-title">相关信息</block>
   <block id="aadb221d48ad5912d16ae10d1a2f7515" category="inline-link-macro">修改分层策略</block>
-  <block id="fc36a9d66532e35056304d11de6f9ae5" category="paragraph"><block ref="aac2c10b4c8f9f85b27f6266bbf93855" category="inline-link-macro-rx"></block> 切换后的目标卷。</block>
   <block id="e53b35d192f3743794b3e37a24c7e92c" category="paragraph">从 NetApp Console 创建和管理 FSx for ONTAP 系统需要 AWS 凭据。您可以创建新凭据或将其添加到现有组织。凭据允许您从 NetApp Console 管理 AWS 资源。</block>
   <block id="1817603d4a287805c966d1fe5b8286a1" category="paragraph">凭据和权限由 NetApp Workload Factory 管理。Workload Factory 是一个生命周期管理平台，旨在帮助用户管理和改进在 Amazon FSx for NetApp ONTAP 文件系统上运行的 VMware、EDA 和数据库工作负载。NetApp Console 和 Workload Factory 使用相同的 AWS 凭据和权限集。_Storage_ 是 Workload Factory 中的存储管理功能，它是您需要打开和添加凭据以创建和管理 FSx for ONTAP 文件系统的唯一功能。</block>
   <block id="063ec75c7bab602d59faa10e680ab3e3" category="paragraph">您可以手动将 AWS 凭据添加到 NetApp Console，以授予您的帐户管理要使用的工作负载功能的权限，以及分配给您的帐户的 IAM 角色。</block>
@@ -835,5 +828,16 @@
   <block id="fabdd77b146b0b5f04616afb10561fb8" category="admonition">长期保留需要匹配的源标签和目标标签。如果需要，Workload Factory 可以为您创建缺少的标签。</block>
   <block id="015e6ecffa9ac033df81ffa6004a8511" category="list-text">*Choose an existing policy*：选择现有策略。</block>
   <block id="593b7503b2bb0ab3939f80c599e28d01" category="section-title">2026年7月15日</block>
-  <block id="911a94d5dfd3459887baca73e6590302" category="paragraph">未解决的指令，位于 &lt;stdin&gt; - include::.._whatsnew/2026-07-15.adoc[]</block>
+  <block id="25b96777bfadb381f78f25912d595183" category="doc">NetApp Console 的法律声明</block>
+  <block id="11af821352757a268574230f2a123a79" category="doc">设置 Amazon FSx for NetApp ONTAP 的权限</block>
+  <block id="f500b12ed4ebc5367419db58198f8fac" category="doc">获取有关 Amazon FSx for NetApp ONTAP 的帮助</block>
+  <block id="856edc4caec68fece6859c4be9360f3c" category="doc">注册账号以获取 NetApp 支持</block>
+  <block id="5b1a8b485dfc95e21b8e18a7df766854" category="doc">创建或发现 Amazon FSx for NetApp ONTAP 文件系统</block>
+  <block id="9ec8a9f187481631b67157753c41fdb1" category="doc">删除 Amazon FSx for NetApp ONTAP 文件系统</block>
+  <block id="8664f94d8b2b3bb84ff27a1b6f4d454d" category="doc">管理适用于 NetApp ONTAP 文件系统的 Amazon FSx</block>
+  <block id="78507cf4f441117a5c21cd08a87c06b5" category="doc">使用 Tracker 监控 Amazon FSx for NetApp ONTAP 操作</block>
+  <block id="dd95565fdf03d756422df4216067b472" category="doc">从项目中删除 Amazon FSx for NetApp ONTAP 文件系统</block>
+  <block id="edd9b651163313031882b1c38ec03792" category="doc">使用 Amazon FSx for NetApp ONTAP 复制数据</block>
+  <block id="4dd81c3ec298b3b3b12adbd43350c454" category="paragraph">_平衡（自动）_ 是使用 Workload Factory 控制台创建卷时的默认分层策略。有关卷分层策略的详细信息，请参阅 AWS FSx for NetApp ONTAP 文档中的 <block ref="de51d392f5d252a956349995f441f55c" category="inline-link-macro-rx"></block>。请注意，Workload Factory 在 Workload Factory 控制台中使用基于用例的名称作为分层策略名称，并在括号中包含 FSx for ONTAP 分层策略名称。</block>
+  <block id="c09808c9c6aa7961a8051c74e6c9def1" category="paragraph"><block ref="e0c6b7f121093601ef05ca7413d94a77" category="inline-link-macro-rx"></block> 切换后的目标卷。</block>
 </blocks>

@@ -4,7 +4,7 @@ permalink: use/task-replicate-data.html
 keywords: replication, replicate fsx for ontap, data protection, disaster recovery, data loss, initialize, cut over, cutover, data transfer, sync 
 summary: 为 FSx for ONTAP 文件系统创建复制关系，以避免在 NetApp Console 发生不可预见的灾难时丢失数据。 
 ---
-= 在 NetApp Console 中将数据复制到 FSx for ONTAP
+= 使用 Amazon FSx for NetApp ONTAP 复制数据
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -123,7 +123,7 @@ Workload Factory 支持以下存储系统之间的迁移复制。
 .. *卷名称*：目标卷名称自动生成，格式如下 `{OriginalVolumeName}_copy`。您可以使用自动生成的卷名或输入其他卷名。
 .. *分层策略*：选择目标卷中存储的数据的分层策略。分层策略默认为您选择的用例的推荐分层策略。
 +
-使用 Workload Factory 控制台创建卷时，_平衡（自动）_ 是默认分层策略。有关卷分层策略的更多信息，请参阅link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-storage-capacity.html#data-tiering-policy["卷存储容量"^]在 AWS FSx for NetApp ONTAP文档中。请注意，工作负载工厂在工作负载工厂控制台中使用基于用例的名称来制定分层策略，并在括号中包含 FSx for ONTAP分层策略名称。
+_平衡（自动）_ 是使用 Workload Factory 控制台创建卷时的默认分层策略。有关卷分层策略的详细信息，请参阅 AWS FSx for NetApp ONTAP 文档中的 link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-storage-capacity.html#data-tiering-policy["卷存储容量"^]。请注意，Workload Factory 在 Workload Factory 控制台中使用基于用例的名称作为分层策略名称，并在括号中包含 FSx for ONTAP 分层策略名称。
 
 +
 如果您选择了迁移用例，Workload Factory 会自动选择将源卷的分层策略复制到目标卷。您可以取消选择复制分层策略并选择适用于选择进行复制的卷的分层策略。
@@ -288,4 +288,4 @@ NOTE: 长期保留需要匹配的源标签和目标标签。如果需要，Workl
 [[related-information]]
 == 相关信息
 
-link:https://review.docs.netapp.com/us-en/workload-fsx-ontap_wa-updates/change-tiering-policy.html["修改分层策略"] 切换后的目标卷。
+link:https://docs.netapp.com/us-en/workload-fsx-ontap/change-tiering-policy.html["修改分层策略"] 切换后的目标卷。

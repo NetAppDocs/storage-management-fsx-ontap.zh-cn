@@ -4,7 +4,7 @@ permalink: use/task-delete-fsx-system.html
 keywords: file system, delete file system, file system deletion 
 summary: 要从NetApp Console删除文件系统，您必须首先删除与该文件系统关联的任何卷、存储虚拟机或复制关系。 
 ---
-= 删除 FSx for ONTAP文件系统
+= 删除 Amazon FSx for NetApp ONTAP 文件系统
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
